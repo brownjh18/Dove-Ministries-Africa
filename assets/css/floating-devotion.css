@@ -1,0 +1,725 @@
+/* Floating Devotion Container */
+.floating-devotion {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 320px;
+    max-height: 90vh;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.floating-devotion:hover {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.floating-devotion.collapsed {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.floating-devotion.collapsed .devotion-content {
+    display: none;
+}
+
+.floating-devotion.collapsed .devotion-header {
+    display: none;
+}
+
+.floating-devotion.collapsed::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea 0%, #c9b9d8 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.floating-devotion.collapsed::after {
+    content: "✝";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.devotion-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 16px;
+    text-align: center;
+    position: relative;
+}
+
+.devotion-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.devotion-toggle {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.devotion-toggle:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.devotion-content {
+    max-height: calc(80vh - 80px);
+    overflow-y: auto;
+    padding: 0;
+}
+
+.devotion-item {
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.devotion-item:last-child {
+    border-bottom: none;
+}
+
+.devotion-date {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.devotion-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.devotion-text {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.devotion-verse {
+    font-style: italic;
+    color: #667eea;
+    font-size: 13px;
+    border-left: 3px solid #667eea;
+    padding-left: 12px;
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+.devotion-greeting {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.devotion-closing {
+    font-style: italic;
+    color: #555;
+    margin-top: 16px;
+    font-size: 13px;
+}
+
+/* Share Buttons */
+.devotion-share {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.devotion-share .share-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.devotion-share .share-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.devotion-share .share-btn.whatsapp {
+    background: #25D366;
+    color: white;
+}
+
+.devotion-share .share-btn.whatsapp:hover {
+    background: #128C7E;
+}
+
+.devotion-share .share-btn.facebook {
+    background: #1877F2;
+    color: white;
+}
+
+.devotion-share .share-btn.facebook:hover {
+    background: #166FE5;
+}
+
+.devotion-share .share-btn.twitter {
+    background: #1DA1F2;
+    color: white;
+}
+
+.devotion-share .share-btn.twitter:hover {
+    background: #1A91DA;
+}
+
+.devotion-share .share-btn.linkedin {
+    background: #0077B5;
+    color: white;
+}
+
+.devotion-share .share-btn.linkedin:hover {
+    background: #005885;
+}
+
+.devotion-share .share-btn.copy {
+    background: #6B7280;
+    color: white;
+}
+
+.devotion-share .share-btn.copy:hover {
+    background: #4B5563;
+}
+
+.devotion-share .share-btn.copy:active {
+    background: #374151;
+}
+
+/* Animated Buttons */
+.animated-btn {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    transform: translateY(0);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animated-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+.animated-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.animated-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.animated-btn:hover::before {
+    left: 100%;
+}
+
+.animated-btn span {
+    position: relative;
+    z-index: 1;
+}
+
+.animated-btn i {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.animated-btn:hover i {
+    transform: translateX(4px);
+}
+
+/* Color variants */
+.animated-btn-pink {
+    background: linear-gradient(135deg, #ec4899 0%, #f97316 100%);
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+}
+
+.animated-btn-pink:hover {
+    box-shadow: 0 8px 25px rgba(236, 72, 153, 0.6);
+}
+
+.animated-btn-blue {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+.animated-btn-blue:hover {
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6);
+}
+
+.animated-btn-yellow {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+}
+
+.animated-btn-yellow:hover {
+    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.6);
+}
+
+.animated-btn-green {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+}
+
+.animated-btn-green:hover {
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.6);
+}
+
+.animated-btn-purple {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+.animated-btn-purple:hover {
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.6);
+}
+
+.animated-btn-indigo {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.animated-btn-indigo:hover {
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.6);
+}
+
+.devotion-footer {
+    padding: 16px;
+    background: #f8f9fa;
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.devotion-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.devotion-link:hover {
+    color: #5a67d8;
+}
+
+.devotion-loading {
+    padding: 40px;
+    text-align: center;
+    color: #666;
+}
+
+.devotion-error {
+    padding: 20px;
+    text-align: center;
+    color: #e53e3e;
+    background: #fed7d7;
+    border-radius: 8px;
+    margin: 16px;
+}
+
+/* Mobile Menu Styles */
+#mobile-menu-button {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+#mobile-menu-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+#mobile-menu-overlay {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 64px);
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+#mobile-menu-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#mobile-menu {
+    position: fixed;
+    top: 64px;
+    right: 0;
+    bottom: 0;
+    width: 320px;
+    max-width: 90vw;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: none;
+    border-radius: 20px 0 0 20px;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    overflow-y: auto;
+}
+
+#mobile-menu .close-btn {
+position: absolute;
+top: -35px;
+right: 8px;
+width: 28px;
+height: 28px;
+background: rgba(255, 255, 255, 0.9);
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+transition: all 0.3s ease;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+z-index: 1001;
+}
+
+#mobile-menu .close-btn:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+#mobile-menu .close-btn i {
+color: #374151;
+font-size: 10px;
+font-weight: bold;
+}
+
+#mobile-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+#mobile-menu .px-2 {
+padding: 12px 8px;
+display: flex;
+flex-direction: column;
+align-items: stretch;
+height: 100%;
+}
+
+#mobile-menu a {
+    display: block;
+    padding: 12px 16px;
+    color: #374151;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 500;
+    margin-bottom: 4px;
+    text-align: left;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    font-size: 15px;
+}
+
+#mobile-menu .ministries-submenu a {
+    padding: 10px 12px;
+    font-size: 14px;
+    margin-bottom: 2px;
+    font-weight: 400;
+}
+
+#mobile-menu a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+#mobile-menu a:hover::before {
+    left: 100%;
+}
+
+#mobile-menu a:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: #2563eb;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+#mobile-menu a.bg-blue-50 {
+    background: rgba(59, 130, 246, 0.1);
+    color: #2563eb;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+}
+
+#mobile-menu a:nth-child(odd) {
+    animation: slideInLeft 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+#mobile-menu a:nth-child(even) {
+    animation: slideInRight 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateX(30px);
+}
+
+#mobile-menu.show a:nth-child(1) { animation-delay: 0.1s; }
+#mobile-menu.show a:nth-child(2) { animation-delay: 0.2s; }
+#mobile-menu.show a:nth-child(3) { animation-delay: 0.3s; }
+#mobile-menu.show a:nth-child(4) { animation-delay: 0.4s; }
+#mobile-menu.show a:nth-child(5) { animation-delay: 0.5s; }
+#mobile-menu.show a:nth-child(6) { animation-delay: 0.6s; }
+#mobile-menu.show a:nth-child(7) { animation-delay: 0.7s; }
+#mobile-menu.show a:nth-child(8) { animation-delay: 0.8s; }
+#mobile-menu.show a:nth-child(9) { animation-delay: 0.9s; }
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .floating-devotion {
+        left: 10px;
+        width: 280px;
+    }
+
+    .floating-devotion.collapsed {
+        left: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-devotion {
+        left: 10px;
+        bottom: 10px;
+        width: 200px;
+        max-height: 80vh;
+    }
+
+    .floating-devotion.collapsed {
+        left: 10px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .floating-devotion.collapsed::before {
+        width: 50px;
+        height: 50px;
+    }
+
+    .floating-devotion.collapsed::after {
+        font-size: 16px;
+    }
+
+    .devotion-item {
+        padding: 16px;
+    }
+
+    .devotion-share .share-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    #mobile-menu-button {
+        width: 44px;
+        height: 44px;
+    }
+
+    #mobile-menu-button i {
+        font-size: 18px;
+    }
+
+    #mobile-menu {
+        top: 64px;
+        right: 0;
+        bottom: 0;
+        width: 240px;
+        max-width: 75vw;
+        border-radius: 12px 0 0 12px;
+    }
+/* Ministries dropdown menu styles */
+.ministries-menu {
+    position: relative;
+}
+
+.ministries-toggle {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ministries-toggle:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: #2563eb;
+}
+
+.ministries-submenu {
+    margin-top: 4px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    animation: slideDown 0.3s ease-out;
+}
+
+.ministries-submenu.hidden {
+    display: none;
+}
+
+.ministries-submenu a {
+    transition: all 0.2s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.ministries-submenu a:last-child {
+    border-bottom: none;
+}
+
+.ministries-submenu a:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: #2563eb;
+    transform: translateX(4px);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Close button styles */
+.close-btn {
+    position: absolute;
+    top: -35px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1001;
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn i {
+    color: #374151;
+    font-size: 10px;
+    font-weight: bold;
+}
+}

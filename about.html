@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Dove Ministries Africa</title>
+    <meta name="description" content="Learn about Dove Ministries Africa's mission, vision, and history in transforming communities across Africa through faith and service.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="assets/css/floating-devotion.css">
+    <link rel="stylesheet" href="assets/css/floating-devotion.css">
+    <link rel="icon" href="assets/images/logo.png" type="image/png">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <img src="assets/images/logo.png" alt="DMA Logo" class="h-10 w-auto">
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="about.html" class="text-blue-600 hover:text-blue-800 transition-colors">About</a>
+                    <div class="relative group"><a href="ministries.html" class="text-gray-700 hover:text-blue-600 transition-colors flex items-center">Ministries<svg class="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a><div class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-200"><div class="py-2"><a href="marriedcouples.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Married Couples Ministry</a><a href="youth.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Youth Ministry</a><a href="children.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Children Ministry</a><a href="evangelism.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Evangelism Ministry</a><a href="intercessions.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Intercessions Ministry</a><a href="worship.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Worship Ministry</a><div class="border-t border-gray-100 my-2"></div><a href="ministries.html" class="block px-4 py-2 text-sm text-blue-600 hover:bg-blue-50 font-medium transition-colors">View All Ministries</a></div></div></div>
+                    <a href="events.html" class="text-gray-700 hover:text-blue-600 transition-colors">Events</a>
+                    <a href="sermons.html" class="text-gray-700 hover:text-blue-600 transition-colors">Sermons</a>
+                    <a href="gallery.html" class="text-gray-700 hover:text-blue-600 transition-colors">Gallery</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+                    <a href="donate.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Donate</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu overlay -->
+        <div id="mobile-menu-overlay"></div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu">
+            <button class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="px-2">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Home</a>
+                <a href="about.html" class="block px-3 py-2 bg-blue-50 text-blue-600">About</a>
+                <div class="ministries-menu">
+                    <a href="#" class="ministries-toggle block px-3 py-2 text-gray-700 hover:text-blue-600 flex items-center justify-between">
+                        <span>Ministries</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
+                    </a>
+                    <div class="ministries-submenu hidden pl-4">
+                        <a href="marriedcouples.html" class="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600">Married Couples</a>
+                        <a href="youth.html" class="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600">Youth</a>
+                        <a href="children.html" class="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600">Children</a>
+                        <a href="evangelism.html" class="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600">Evangelism</a>
+                        <a href="intercessions.html" class="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600">Intercessions</a>
+                        <a href="worship.html" class="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600">Worship</a>
+                        <div class="border-t border-gray-200 my-1"></div>
+                        <a href="ministries.html" class="block px-2 py-1 text-sm text-blue-600 font-medium">View All</a>
+                    </div>
+                </div>
+                <a href="events.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Events</a>
+                <a href="sermons.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Sermons</a>
+                <a href="gallery.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Gallery</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</a>
+                <a href="donate.html" class="block px-3 py-2 bg-blue-600 text-white rounded-lg text-center">Donate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-16 relative h-75 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 flex items-center overflow-hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/images/hero-about.jpg');"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+            <div class="text-center text-white">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">About Dove Ministries Africa</h1>
+                <p class="text-xl md:text-2xl text-gray-100 drop-shadow-md max-w-3xl mx-auto">
+                    Founded in 2005 by Pastor Daniel and Erica Kaggwa, under the tutelage of Apostle Harry and Deborah Stackhouse. Located in Nfuufu Zone, Zzana-Bunamwaya in Makindye-Ssabagabo municipality, about 500 metres from the Zzana Roundabout on Entebbe Road.
+                </p>
+                <div class="mt-8">
+                    <a href="#mission" class="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg text-center font-semibold">
+                        Learn Our Story
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section id="mission" class="py-20 bg-white animate-fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Mission</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        To take the gospel of Jesus Christ to the lost and assimilate them into a church community where they may grow spiritually and become equipped to win the lost.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Spirit Led, Compassion Driven.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-cross text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Transformation of family, community and nation</h3>
+                                <p class="text-gray-600">Building communities rooted in biblical principles and spiritual growth.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-star text-green-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Excellence</h3>
+                                <p class="text-gray-600">Providing quality education and skills training for sustainable development.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-shield-alt text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Integrity</h3>
+                                <p class="text-gray-600">Offering practical assistance and compassionate care to those in need.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-hand-holding-heart text-orange-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Stewardship</h3>
+                                <p class="text-gray-600">Managing resources responsibly for maximum impact.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="assets/images/pastor.jpg" alt="Our Mission" class="rounded-2xl shadow-2xl w-full">
+                </div>
+            </div>
+
+            <!-- Vision Section -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Vision</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+                    To be a beacon of hope and transformation across Africa, establishing thriving communities where faith, education, and sustainable development create lasting positive change for generations to come.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl text-center">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-eye text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Spiritual Awakening</h3>
+                    <p class="text-gray-700">
+                        A continent-wide spiritual revival where every community experiences the transformative power of God's love and grace.
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl text-center">
+                    <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-seedling text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Sustainable Growth</h3>
+                    <p class="text-gray-700">
+                        Communities that are self-sustaining, educated, and empowered to create their own future of prosperity and hope.
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl text-center">
+                    <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-globe-africa text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">African Excellence</h3>
+                    <p class="text-gray-700">
+                        Showcasing Africa's potential as a continent of innovation, leadership, and spiritual influence worldwide.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="py-20 bg-gray-50 animate-slide-up">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Story</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Founded in 2005 by Pastor Daniel and Erica Kaggwa, under the tutelage of Apostle Harry and Deborah Stackhouse.
+                </p>
+            </div>
+
+            <!-- Timeline -->
+            <div class="relative">
+                <!-- Vertical Timeline Line -->
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-blue-400 via-green-400 via-purple-400 via-pink-400 via-indigo-400 to-teal-400 h-full animate-pulse"></div>
+
+                <div class="space-y-12">
+                    <!-- December 2005 -->
+                    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-48 relative">
+                        <!-- Timeline Dot -->
+                        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-blue-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="md:w-1/2">
+                            <img src="assets/images/fb.jpg" alt="Church members in first structure" class="w-full aspect-video object-cover rounded-xl shadow-lg">
+                        </div>
+                        <div class="md:w-1/2">
+                            <div class="px-4 md:px-0">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4">December 2005</h3>
+                                <h4 class="text-lg font-semibold text-blue-600 mb-3">some of our church members in the first structure</h4>
+                                <p class="text-gray-600 leading-relaxed">
+                                    The structure was temporary and its where the vision bearer of Dove ministries Africa started from by laying his foundation and now we can all see how far the lord has brought us.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- March 2013 -->
+                    <div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-48 relative">
+                        <!-- Timeline Dot -->
+                        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-green-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="md:w-1/2">
+                            <img src="assets/images/tt.JPG" alt="Church members laying foundation stone" class="w-full aspect-video object-cover rounded-xl shadow-lg">
+                        </div>
+                        <div class="md:w-1/2">
+                            <div class="px-4 md:px-0">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4">March 2013</h3>
+                                <h4 class="text-lg font-semibold text-green-600 mb-3">Another team that the Lord used during the season of 2013</h4>
+                                <p class="text-gray-600 leading-relaxed">
+                                    Some of the Church members that laid the foundation stone in Zana, Kampala Uganda where the headquarters of DMA are now fully established.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- November 2014 -->
+                    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-48 relative">
+                        <!-- Timeline Dot -->
+                        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-purple-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="md:w-1/2">
+                            <img src="assets/images/oo.JPG" alt="Orphan Sunday celebration" class="w-full aspect-video object-cover rounded-xl shadow-lg">
+                        </div>
+                        <div class="md:w-1/2">
+                            <div class="px-4 md:px-0">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4">November 2014</h3>
+                                <h4 class="text-lg font-semibold text-purple-600 mb-3">Orphan Sunday celebration</h4>
+                                <p class="text-gray-600 leading-relaxed">
+                                    Orphan Sunday in Uganda is a significant celebration that unites communities, churches, and organizations to raise awareness and support for orphans. It involves vibrant decorations, church services, and various activities aimed at empowering these vulnerable children. The event serves as a reminder of the challenges faced by orphans and the need for a loving family. Fundraising drives, educational programs, and mentorship initiatives are organized to provide essential support systems. Orphan Sunday highlights the importance of collective efforts in offering a brighter future to these children, filled with love, care, and opportunity.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- March 2023 -->
+                    <div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-48 relative">
+                        <!-- Timeline Dot -->
+                        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-pink-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="md:w-1/2">
+                            <img src="assets/images/ww4.JPG" alt="Women's Day celebration" class="w-full aspect-video object-cover rounded-xl shadow-lg">
+                        </div>
+                        <div class="md:w-1/2">
+                            <div class="px-4 md:px-0">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4">March 2023</h3>
+                                <h4 class="text-lg font-semibold text-pink-600 mb-3">Women's Day celebration</h4>
+                                <p class="text-gray-600 leading-relaxed">
+                                    The women shared their experiences, triumphs, and challenges, fostering a strong sense of community and sisterhood. It is a day of celebration, reflection, and solidarity, reminding everyone of the invaluable contributions and resilience of women in Ugandan society.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- May 2023 -->
+                    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-48 relative">
+                        <!-- Timeline Dot -->
+                        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-indigo-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="md:w-1/2">
+                            <img src="assets/images/gr.JPG" alt="Pastor's and leaders' conference" class="w-full aspect-video object-cover rounded-xl shadow-lg">
+                        </div>
+                        <div class="md:w-1/2">
+                            <div class="px-4 md:px-0">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4">May 2023</h3>
+                                <h4 class="text-lg font-semibold text-indigo-600 mb-3">Annual Pastor's and leaders' conference, Mukono</h4>
+                                <p class="text-gray-600 leading-relaxed">
+                                    Pastors and leaders were greatly equipped with leadership skills and knowledge by our Dear Pastors and great leaders from different Areas and continents like Kenya, Tanzania, South Africa and USA, Lead by Pastor GREG HASWELL the lead elder of the Northlands church.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- June 2023 -->
+                    <div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-48 relative">
+                        <!-- Timeline Dot -->
+                        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-teal-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="md:w-1/2">
+                            <img src="assets/images/jj.jpg" alt="ANNUAL DMA conference in Jinja" class="w-full aspect-video object-cover rounded-xl shadow-lg">
+                        </div>
+                        <div class="md:w-1/2">
+                            <div class="px-4 md:px-0">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4">June 2023</h3>
+                                <h4 class="text-lg font-semibold text-teal-600 mb-3">ANNUAL DMA conference, In JINJA</h4>
+                                <p class="text-gray-600 leading-relaxed">
+                                    The conference was successful and very many people gave their lives to Christ and many renewed their covenant of salvation with the Lord.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="py-20 bg-white animate-fade-in-delay">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Leadership Team</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Dedicated servants of God leading our mission with wisdom, compassion, and vision.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center">
+                    <img src="assets/images/kaggwa.png" alt="Pastor Daniel Kaggwa" class="w-full h-80 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Pastor Daniel Kaggwa</h3>
+                        <p class="text-blue-600 font-medium">Senior Pastor & Founder</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center">
+                    <img src="assets/images/Erica1.png" alt="Pastor Sarah Nakato" class="w-full h-80 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Pastor Erica Kaggwa</h3>
+                        <p class="text-blue-600 font-medium">Women Ministry Head</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center">
+                    <img src="assets/images/youth.jpeg" alt="Pastor Michael Oduya" class="w-full h-80 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Pastor Nkuubi Denis</h3>
+                        <p class="text-blue-600 font-medium">Youth Pastor & Administrator</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center">
+                    <img src="assets/images/nelson 2.jpeg" alt="Pastor Grace Achieng" class="w-full h-80 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Pastor Nelson Natulinda</h3>
+                        <p class="text-blue-600 font-medium">Children's Ministry Director</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center">
+                    <img src="assets/images/youth.jpg" alt="Pastor Emmanuel Njoroge" class="w-full h-80 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Pastor Magede</h3>
+                        <p class="text-blue-600 font-medium">Pastor</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden text-center">
+                    <img src="assets/images/cathy 1.jpeg" alt="Pastor Rebecca Wanjiku" class="w-full h-80 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Cathy</h3>
+                        <p class="text-blue-600 font-medium">Suny School Teacher</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Church Branches Section -->
+    <section class="py-20 bg-white animate-bounce-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Church Branches</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Discover our growing network of churches across different countries in Africa, each serving their communities with faith and love.
+                </p>
+            </div>
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Countries List -->
+                <div class="lg:col-span-1">
+                    <div class="bg-gray-50 rounded-xl p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Countries</h3>
+                        <div class="space-y-2" id="countries-list">
+                            <!-- Countries will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Country Details -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white border border-gray-200 rounded-xl p-8 shadow-lg" id="country-details">
+                        <div class="text-center text-gray-500">
+                            <i class="fas fa-map-marker-alt text-4xl mb-4"></i>
+                            <p>Select a country to view details</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="py-20 bg-blue-600 text-white animate-scale-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Core Values</h2>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto">
+                    The principles that guide everything we do in ministry and service.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-praying-hands text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Faith</h3>
+                    <p class="opacity-90">We believe in the power of prayer and trust in God's guidance in all our endeavors.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heart text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Compassion</h3>
+                    <p class="opacity-90">We serve with genuine love and care for every person we encounter.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-handshake text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Integrity</h3>
+                    <p class="opacity-90">We conduct ourselves with honesty, transparency, and ethical excellence.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Community</h3>
+                    <p class="opacity-90">We build strong, supportive communities that uplift and empower one another.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-gray-50 animate-fade-in-up">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Join Our Mission</h2>
+            <p class="text-xl text-gray-600 mb-8">
+                Be part of transforming communities across Africa through faith and service.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                    Get Involved
+                </a>
+                <a href="donate.html" class="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors">
+                    Support Our Work
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                <div class="space-y-6">
+                    <h3 class="text-lg font-semibold mb-4">ABOUT US</h3>
+                    <p class="text-gray-400">
+                        The Dove Ministries Africa was founded in 2005 by Pastor Daniel and Erica Kaggwa, under the tutelage of Apostle Harry and Deborah Stackhouse. It is located in Nfuufu Zone, Zzana-Bunamwaya in Makindye-Ssabagabo municipality, about 500 metres from the Zzana Roundabout on Entebbe Road.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">MINISTERIES</h3>
+                    <div class="space-y-3">
+                        <a href="marriedcouples.html" class="block text-gray-400 hover:text-white transition-colors">Married Couples</a>
+                        <a href="youth.html" class="block text-gray-400 hover:text-white transition-colors">Youth</a>
+                        <a href="children.html" class="block text-gray-400 hover:text-white transition-colors">Children</a>
+                        <a href="evangelism.html" class="block text-gray-400 hover:text-white transition-colors">Evangelism</a>
+                        <a href="intercessions.html" class="block text-gray-400 hover:text-white transition-colors">Intercessions</a>
+                        <a href="worship.html" class="block text-gray-400 hover:text-white transition-colors">Worship</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">REACH US</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-blue-400 mt-1 mr-3"></i>
+                            <div>
+                                <p>Nfuufu Zone, Zzana-Bunamwaya</p>
+                                <p>P.O.Box 7044, Kampla uganda,</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-blue-400 mr-3"></i>
+                            <span>+256 772824677</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-blue-400 mr-3"></i>
+                            <span>+256 700116734</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-blue-400 mr-3"></i>
+                            <span>thesignofthedoveministries@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Service Hours</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <p class="font-medium">Sunday Services</p>
+                            <p class="text-gray-400 text-sm">7:30 AM - First Service</p>
+                            <p class="text-gray-400 text-sm">10:30 AM - Second Service</p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Office Hours</p>
+                            <p class="text-gray-400 text-sm">Monday - Friday: 9:00 AM - 5:00 PM</p>
+                            <p class="text-gray-400 text-sm">Saturday: 10:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8">
+                <div class="text-center">
+                    <p class="text-gray-400 text-sm">© 2025 Dove Ministeries Africa. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+        <script src="assets/js/main.js"></script><script src="assets/js/devotion-widget.js"></script>
+    <script>
+        // Church branches data
+        const churchBranches = [
+            {
+                name: "Uganda",
+                description: "Uganda, the \"Pearl of Africa,\" is a vital part of Dove Ministries Africa's mission to spread faith and empower communities. With a network of churches across the country, the ministry focuses on church planting, youth development, and community outreach, addressing spiritual and social needs. Embracing Uganda's rich cultural diversity, Dove Ministries fosters unity while transforming lives through leadership training, faith conferences, and missionary work. In Uganda, the ministry serves as a beacon of hope, reflecting Christ's love and creating lasting impact in both urban centers and rural areas.",
+                stats: {
+                    numberOfChurches: 100,
+                    numberOfMembers: 5000,
+                    numberOfMembersBaptised: 700
+                },
+                flag: "assets/images/flags/uganda.png",
+                pastor: {
+                    name: "Pastor Daniel Kaggwa",
+                    title: "Senior Pastor & Founder",
+                    bio: "With over 30 years of ministry experience, Pastor Daniel leads our vision and provides spiritual guidance across all our programs, serving as the foundation of our mission in Uganda.",
+                    image: "assets/images/pastor.jpg"
+                }
+            },
+            {
+                name: "Rwanda",
+                description: "test description",
+                stats: {
+                    numberOfChurches: 10,
+                    numberOfMembers: 500,
+                    numberOfMembersBaptised: 200
+                },
+                flag: "assets/images/flags/rwanda.png",
+                pastor: {
+                    name: "Pastor Jean Baptiste",
+                    title: "Head Pastor - Rwanda",
+                    bio: "Pastor Jean Baptiste has been leading the Rwanda branch since 2015, bringing hope and transformation to communities across the country through dedicated ministry work.",
+                    image: "assets/images/pastor.jpg"
+                }
+            },
+            {
+                name: "DRC",
+                description: "This one of the greatest countries in the history of mankind",
+                stats: {
+                    numberOfChurches: 5,
+                    numberOfMembers: 500,
+                    numberOfMembersBaptised: 100
+                },
+                flag: "assets/images/flags/drc.png",
+                pastor: {
+                    name: "Pastor Joseph Mukendi",
+                    title: "Head Pastor - DRC",
+                    bio: "Pastor Joseph has been instrumental in establishing churches in the Democratic Republic of Congo, focusing on community development and spiritual growth in challenging environments.",
+                    image: "assets/images/testimony.jpg"
+                }
+            },
+            {
+                name: "Kenya",
+                description: "Uganda, the \"Pearl of Africa,\" is a vital part of Dove Ministries Africa's mission to spread faith and empower communities. With a network of churches across the country, the ministry focuses on church planting, youth development, and community outreach, addressing spiritual and social needs. Embracing Uganda's rich cultural diversity, Dove Ministries fosters unity while transforming lives through leadership training, faith conferences, and missionary work. In Uganda, the ministry serves as a beacon of hope, reflecting Christ's love and creating lasting impact in both urban centers and rural areas.",
+                stats: {
+                    numberOfChurches: 100,
+                    numberOfMembers: 5000,
+                    numberOfMembersBaptised: 700
+                },
+                flag: "assets/images/flags/kenya.png",
+                pastor: {
+                    name: "Pastor Samuel Kiprop",
+                    title: "Head Pastor - Kenya",
+                    bio: "Pastor Samuel leads the Kenya branch with passion, overseeing church planting initiatives and community development programs that serve thousands across the nation.",
+                    image: "assets/images/youth.jpg"
+                }
+            },
+            {
+                name: "Tanzania",
+                description: "Uganda, the \"Pearl of Africa,\" is a vital part of Dove Ministries Africa's mission to spread faith and empower communities. With a network of churches across the country, the ministry focuses on church planting, youth development, and community outreach, addressing spiritual and social needs. Embracing Uganda's rich cultural diversity, Dove Ministries fosters unity while transforming lives through leadership training, faith conferences, and missionary work. In Uganda, the ministry serves as a beacon of hope, reflecting Christ's love and creating lasting impact in both urban centers and rural areas.",
+                stats: {
+                    numberOfChurches: 100,
+                    numberOfMembers: 5000,
+                    numberOfMembersBaptised: 700
+                },
+                flag: "assets/images/flags/tanzania.png",
+                pastor: {
+                    name: "Pastor Ezekiel Mushi",
+                    title: "Head Pastor - Tanzania",
+                    bio: "Pastor Ezekiel has dedicated his life to ministry in Tanzania, leading numerous church plants and community outreach programs that have touched countless lives.",
+                    image: "assets/images/.jpg"
+                }
+            },
+            {
+                name: "Burundi",
+                description: "Uganda, the \"Pearl of Africa,\" is a vital part of Dove Ministries Africa's mission to spread faith and empower communities. With a network of churches across the country, the ministry focuses on church planting, youth development, and community outreach, addressing spiritual and social needs. Embracing Uganda's rich cultural diversity, Dove Ministries fosters unity while transforming lives through leadership training, faith conferences, and missionary work. In Uganda, the ministry serves as a beacon of hope, reflecting Christ's love and creating lasting impact in both urban centers and rural areas.",
+                stats: {
+                    numberOfChurches: 100,
+                    numberOfMembers: 5000,
+                    numberOfMembersBaptised: 700
+                },
+                flag: "assets/images/flags/burundi.png",
+                pastor: {
+                    name: "Pastor Pierre Nkurunziza",
+                    title: "Head Pastor - Burundi",
+                    bio: "Pastor Pierre leads the Burundi branch with wisdom and compassion, overseeing church growth and community development initiatives that bring hope to the nation.",
+                    image: "assets/images/event.jpg"
+                }
+            }
+        ];
+
+        // Initialize church branches section
+        document.addEventListener('DOMContentLoaded', function() {
+            const countriesList = document.getElementById('countries-list');
+            const countryDetails = document.getElementById('country-details');
+
+            // Populate countries list
+            churchBranches.forEach((country, index) => {
+                const countryButton = document.createElement('button');
+                countryButton.className = 'w-full text-left px-4 py-3 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors country-button';
+                countryButton.textContent = country.name;
+                countryButton.dataset.index = index;
+                countriesList.appendChild(countryButton);
+            });
+
+            // Add event listeners to country buttons
+            document.querySelectorAll('.country-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const index = this.dataset.index;
+                    const country = churchBranches[index];
+
+                    // Update active button
+                    document.querySelectorAll('.country-button').forEach(btn => {
+                        btn.classList.remove('bg-blue-100', 'text-blue-700');
+                    });
+                    this.classList.add('bg-blue-100', 'text-blue-700');
+
+                    // Update country details
+                    countryDetails.innerHTML = `
+                        <!-- Country Flag at Top -->
+                        <div class="text-center mb-6">
+                            <img src="${country.flag}" alt="${country.name} Flag" class="w-24 h-16 object-cover rounded-lg shadow-lg mx-auto mb-4">
+                            <h3 class="text-2xl font-bold text-gray-900">${country.name}</h3>
+                        </div>
+
+                        <p class="text-gray-600 mb-6 leading-relaxed">${country.description}</p>
+
+                        <!-- Head Pastor Section -->
+                        <div class="bg-blue-50 rounded-lg p-4 mb-6">
+                            <h4 class="text-lg font-semibold text-gray-900 mb-4">Head Pastor</h4>
+                            <div class="flex items-start">
+                                <img src="${country.pastor.image}" alt="${country.pastor.name}" class="w-16 h-16 object-cover rounded-full shadow mr-4 flex-shrink-0">
+                                <div class="flex-1">
+                                    <div class="font-medium text-gray-900 mb-1">${country.pastor.name}</div>
+                                    <p class="text-blue-700 text-sm mb-2">${country.pastor.title}</p>
+                                    <p class="text-gray-600 text-sm">${country.pastor.bio}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-blue-600">${country.stats.numberOfChurches}</div>
+                                <div class="text-sm text-gray-600">Churches</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-green-600">${country.stats.numberOfMembers}</div>
+                                <div class="text-sm text-gray-600">Members</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-purple-600">${country.stats.numberOfMembersBaptised}</div>
+                                <div class="text-sm text-gray-600">Baptised</div>
+                            </div>
+                        </div>
+                    `;
+                });
+            });
+        });
+    </script>
+    <script src="assets/js/main.js"></script><script src="assets/js/devotion-widget.js"></script>
+    <script src="assets/js/devotion-widget.js"></script>
+</body>
+</html>
+

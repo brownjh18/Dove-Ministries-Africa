@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Married Couples Ministry - Dove Ministries Africa</title>
+    <meta name="description" content="Join the Married Couples Ministry at Dove Ministries Africa. Strengthen your marriage through fellowship, counseling, and spiritual growth.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="assets/css/floating-devotion.css">
+    <link rel="icon" href="assets/images/logo.png" type="image/png">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <img src="assets/images/logo.png" alt="DMA Logo" class="h-10 w-auto">
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-blue-600 transition-colors">About</a>
+                    <div class="relative group"><a href="ministries.html" class="text-blue-600 hover:text-blue-800 transition-colors flex items-center">Ministries<svg class="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a><div class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-200"><div class="py-2"><a href="marriedcouples.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Married Couples Ministry</a><a href="youth.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Youth Ministry</a><a href="children.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Children Ministry</a><a href="evangelism.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Evangelism Ministry</a><a href="intercessions.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Intercessions Ministry</a><a href="worship.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Worship Ministry</a><div class="border-t border-gray-100 my-2"></div><a href="ministries.html" class="block px-4 py-2 text-sm text-blue-600 hover:bg-blue-50 font-medium transition-colors">View All Ministries</a></div></div></div>
+                    <a href="events.html" class="text-gray-700 hover:text-blue-600 transition-colors">Events</a>
+                    <a href="sermons.html" class="text-gray-700 hover:text-blue-600 transition-colors">Sermons</a>
+                    <a href="gallery.html" class="text-gray-700 hover:text-blue-600 transition-colors">Gallery</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+                    <a href="donate.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Donate</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu overlay -->
+        <div id="mobile-menu-overlay"></div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu">
+            <div class="px-2">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">About</a>
+                <div class="ministries-menu">
+                    <a href="#" class="ministries-toggle block px-3 py-2 text-gray-700 hover:text-blue-600 flex items-center justify-between">
+                        <span>Ministries</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
+                    </a>
+                    <div class="ministries-submenu hidden pl-4">
+                        <a href="marriedcouples.html" class="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600">Married Couples</a>
+                        <a href="youth.html" class="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600">Youth</a>
+                        <a href="children.html" class="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600">Children</a>
+                        <a href="evangelism.html" class="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600">Evangelism</a>
+                        <a href="intercessions.html" class="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600">Intercessions</a>
+                        <a href="worship.html" class="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600">Worship</a>
+                        <div class="border-t border-gray-200 my-1"></div>
+                        <a href="ministries.html" class="block px-2 py-1 text-sm text-blue-600 font-medium">View All</a>
+                    </div>
+                </div>
+                <a href="events.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Events</a>
+                <a href="sermons.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Sermons</a>
+                <a href="gallery.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Gallery</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</a>
+                <a href="donate.html" class="block px-3 py-2 bg-blue-600 text-white rounded-lg text-center">Donate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-16 relative h-75 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 flex items-center overflow-hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/images/hero-marriedcouples.jpg');"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+            <div class="text-center text-white">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">Married Couples Ministry</h1>
+                <p class="text-xl md:text-2xl text-gray-100 drop-shadow-md max-w-3xl mx-auto">
+                    Building stronger marriages and families through fellowship, counseling, and spiritual growth.
+                </p>
+                <div class="mt-8">
+                    <a href="#main" class="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg text-center font-semibold">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ministry Overview -->
+    <section id="main" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About Our Ministry</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        The Married Couples Ministry is dedicated to strengthening marriages and building godly families. We provide a supportive community where couples can grow together spiritually, emotionally, and relationally.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-heart text-pink-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Marriage Enrichment</h3>
+                                <p class="text-gray-600">Workshops and seminars focused on communication, conflict resolution, and intimacy.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-users text-pink-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Couples Fellowship</h3>
+                                <p class="text-gray-600">Regular gatherings for fellowship, prayer, and mutual support.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-praying-hands text-pink-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Spiritual Growth</h3>
+                                <p class="text-gray-600">Bible studies and prayer focused on building Christ-centered marriages.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="assets/images/youth.jpg" alt="Married Couples Ministry" class="rounded-2xl shadow-2xl w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marriage Milestones Celebration -->
+    <section class="py-20 bg-gradient-to-br from-yellow-50 to-orange-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Celebrating Marriage Milestones</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Honoring couples who have reached significant milestones in their journey together.
+                </p>
+            </div>
+
+            <!-- Milestones Timeline -->
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-yellow-400 to-orange-500 h-full rounded-full"></div>
+
+                <div class="space-y-12">
+                    <!-- 25 Years Milestone -->
+                    <div class="relative flex items-center">
+                        <div class="flex-1 text-right pr-8">
+                            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                                <div class="flex items-center justify-end mb-4">
+                                    <div class="text-right mr-4">
+                                        <h3 class="text-xl font-bold text-gray-900">25 Years of Marriage</h3>
+                                        <p class="text-orange-600 font-medium">Golden Anniversary</p>
+                                    </div>
+                                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-crown text-2xl text-white"></i>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 mb-4">Celebrating couples who have reached this beautiful milestone. Their commitment and love inspire us all.</p>
+                                <div class="flex items-center justify-end space-x-4 text-sm text-gray-500">
+                                    <span><i class="fas fa-users mr-1"></i>12 couples this year</span>
+                                    <span><i class="fas fa-calendar mr-1"></i>2025 celebrations</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-6 h-6 bg-orange-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="flex-1 pl-8"></div>
+                    </div>
+
+                    <!-- 10 Years Milestone -->
+                    <div class="relative flex items-center">
+                        <div class="flex-1 pr-8"></div>
+                        <div class="w-6 h-6 bg-yellow-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="flex-1 pl-8">
+                            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fas fa-ring text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-gray-900">10 Years of Marriage</h3>
+                                        <p class="text-yellow-600 font-medium">Tin Anniversary</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 mb-4">A decade of love, commitment, and growth. These couples have built strong foundations for their families.</p>
+                                <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                    <span><i class="fas fa-users mr-1"></i>28 couples celebrated</span>
+                                    <span><i class="fas fa-calendar mr-1"></i>Ongoing throughout 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5 Years Milestone -->
+                    <div class="relative flex items-center">
+                        <div class="flex-1 text-right pr-8">
+                            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                                <div class="flex items-center justify-end mb-4">
+                                    <div class="text-right mr-4">
+                                        <h3 class="text-xl font-bold text-gray-900">5 Years of Marriage</h3>
+                                        <p class="text-amber-600 font-medium">Wooden Anniversary</p>
+                                    </div>
+                                    <div class="w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-tree text-2xl text-white"></i>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 mb-4">Five years of building a life together. These couples have weathered storms and celebrated joys.</p>
+                                <div class="flex items-center justify-end space-x-4 text-sm text-gray-500">
+                                    <span><i class="fas fa-users mr-1"></i>45 couples this year</span>
+                                    <span><i class="fas fa-calendar mr-1"></i>Monthly celebrations</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-6 h-6 bg-amber-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="flex-1 pl-8"></div>
+                    </div>
+
+                    <!-- 1 Year Milestone -->
+                    <div class="relative flex items-center">
+                        <div class="flex-1 pr-8"></div>
+                        <div class="w-6 h-6 bg-green-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+                        <div class="flex-1 pl-8">
+                            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mr-4">
+                                        <i class="fas fa-seedling text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-gray-900">1 Year of Marriage</h3>
+                                        <p class="text-green-600 font-medium">Paper Anniversary</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 mb-4">The first year is complete! These couples have taken their first steps into married life and are growing stronger.</p>
+                                <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                    <span><i class="fas fa-users mr-1"></i>67 couples celebrated</span>
+                                    <span><i class="fas fa-calendar mr-1"></i>Quarterly ceremonies</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ministry Statistics -->
+    <section class="py-20 bg-pink-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Impact</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Growing stronger together in faith and love.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-pink-600 mb-2">150+</div>
+                    <div class="text-lg text-gray-900">Married Couples</div>
+                    <div class="text-sm text-gray-600 mt-1">Active members</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-pink-600 mb-2">25</div>
+                    <div class="text-lg text-gray-900">Years of Ministry</div>
+                    <div class="text-sm text-gray-600 mt-1">Since inception</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-pink-600 mb-2">50+</div>
+                    <div class="text-lg text-gray-900">Families Blessed</div>
+                    <div class="text-sm text-gray-600 mt-1">This year</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold text-pink-600 mb-2">12</div>
+                    <div class="text-lg text-gray-900">Monthly Meetings</div>
+                    <div class="text-sm text-gray-600 mt-1">Regular gatherings</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Counseling Appointment Booking -->
+    <section class="py-20 bg-gradient-to-br from-indigo-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Marriage Counseling</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Professional guidance to help you navigate challenges and strengthen your relationship.
+                </p>
+            </div>
+
+            <!-- Counseling Types -->
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user-friends text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Couples Counseling</h3>
+                    <p class="text-gray-600 mb-4">Joint sessions to work on communication, conflict resolution, and relationship building.</p>
+                    <p class="text-sm text-gray-500 mb-4">90-minute sessions</p>
+                    <button onclick="bookCounseling('couples')" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        Book Session
+                    </button>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Individual Counseling</h3>
+                    <p class="text-gray-600 mb-4">Personal sessions to address individual concerns that affect your marriage.</p>
+                    <p class="text-sm text-gray-500 mb-4">60-minute sessions</p>
+                    <button onclick="bookCounseling('individual')" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                        Book Session
+                    </button>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Group Workshops</h3>
+                    <p class="text-gray-600 mb-4">Interactive workshops on marriage topics with other couples.</p>
+                    <p class="text-sm text-gray-500 mb-4">2-hour sessions</p>
+                    <button onclick="bookCounseling('group')" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                        Join Workshop
+                    </button>
+                </div>
+            </div>
+
+            <!-- Booking Form Modal -->
+            <div id="booking-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+                <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-2xl font-bold text-gray-900">Book Counseling Session</h3>
+                            <button onclick="closeBookingModal()" class="text-gray-400 hover:text-gray-600">
+                                <i class="fas fa-times text-xl"></i>
+                            </button>
+                        </div>
+
+                        <form id="booking-form">
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+                                    <input type="text" id="booking-name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Spouse's Name</label>
+                                    <input type="text" id="booking-spouse" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                                    <input type="email" id="booking-email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                                    <input type="tel" id="booking-phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Counseling Type</label>
+                                <select id="booking-type" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                                    <option value="">Select counseling type</option>
+                                    <option value="couples">Couples Counseling</option>
+                                    <option value="individual">Individual Counseling</option>
+                                    <option value="group">Group Workshop</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Date</label>
+                                <input type="date" id="booking-date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required min="<?php echo date('Y-m-d', strtotime('+1 day')); ?>">
+                            </div>
+
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Time</label>
+                                <select id="booking-time" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                                    <option value="">Select time</option>
+                                    <option value="09:00">9:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-6">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Brief Description of Concerns</label>
+                                <textarea id="booking-concerns" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Please briefly describe what you'd like to work on in counseling..." required></textarea>
+                            </div>
+
+                            <div class="mb-6">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="booking-consent" class="mr-3 text-blue-600 focus:ring-blue-500" required>
+                                    <span class="text-sm text-gray-700">I understand that counseling sessions are confidential and agree to the terms of service.</span>
+                                </label>
+                            </div>
+
+                            <div class="text-center">
+                                <button type="submit" class="bg-blue-600 text-white px-8 py-4 rounded-xl hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold text-lg">
+                                    <i class="fas fa-calendar-check mr-2"></i> Confirm Booking
+                                </button>
+                                <p class="text-sm text-gray-500 mt-4">
+                                    You will receive a confirmation email within 24 hours. Sessions are subject to counselor availability.
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ministry Leaders -->
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Meet Our Counselors</h3>
+                    <p class="text-gray-600">Experienced professionals dedicated to helping marriages thrive.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="flex items-start space-x-4">
+                        <img src="assets/images/pastor.jpg" alt="Pastor John Smith" class="w-20 h-20 rounded-full object-cover">
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900">Pastor John & Mary Smith</h4>
+                            <p class="text-blue-600 font-medium">Lead Marriage Counselors</p>
+                            <p class="text-gray-600 text-sm mt-2">28 years married, 15 years in marriage ministry. Certified marriage counselors with advanced training in Christian marriage therapy.</p>
+                            <div class="flex items-center mt-2 text-sm text-gray-500">
+                                <i class="fas fa-envelope mr-2"></i>
+                                johnmary@dma.org
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <img src="assets/images/testimony.jpg" alt="Dr. Sarah Johnson" class="w-20 h-20 rounded-full object-cover">
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-900">Dr. Sarah Johnson</h4>
+                            <p class="text-green-600 font-medium">Clinical Marriage Therapist</p>
+                            <p class="text-gray-600 text-sm mt-2">Licensed clinical psychologist specializing in marriage and family therapy. 12 years of experience helping couples rebuild and strengthen their relationships.</p>
+                            <div class="flex items-center mt-2 text-sm text-gray-500">
+                                <i class="fas fa-phone mr-2"></i>
+                                +256 772 824 677
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-pink-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Join Our Ministry</h2>
+            <p class="text-xl opacity-90 mb-8">
+                Whether you're newly married or celebrating decades together, there's a place for you in our community.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="bg-white text-pink-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">
+                    Get Connected
+                </a>
+                <a href="mailto:johnmary@dma.org" class="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-pink-600 transition-colors">
+                    Contact Leaders
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                <div class="space-y-6">
+                    <h3 class="text-lg font-semibold mb-4">ABOUT US</h3>
+                    <p class="text-gray-400">
+                        The Dove Ministries Africa was founded in 2005 by Pastor Daniel and Erica Kaggwa, under the tutelage of Apostle Harry and Deborah Stackhouse. It is located in Nfuufu Zone, Zzana-Bunamwaya in Makindye-Ssabagabo municipality, about 500 metres from the Zzana Roundabout on Entebbe Road.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">MINISTERIES</h3>
+                    <div class="space-y-3">
+                        <a href="marriedcouples.html" class="block text-gray-400 hover:text-white transition-colors">Married Couples</a>
+                        <a href="youth.html" class="block text-gray-400 hover:text-white transition-colors">Youth</a>
+                        <a href="children.html" class="block text-gray-400 hover:text-white transition-colors">Children</a>
+                        <a href="evangelism.html" class="block text-gray-400 hover:text-white transition-colors">Evangelism</a>
+                        <a href="intercessions.html" class="block text-gray-400 hover:text-white transition-colors">Intercessions</a>
+                        <a href="worship.html" class="block text-gray-400 hover:text-white transition-colors">Worship</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">REACH US</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-blue-400 mt-1 mr-3"></i>
+                            <div>
+                                <p>Nfuufu Zone, Zzana-Bunamwaya</p>
+                                <p>P.O.Box 7044, Kampla uganda,</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-blue-400 mr-3"></i>
+                            <span>+256 772824677</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-blue-400 mr-3"></i>
+                            <span>+256 700116734</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-blue-400 mr-3"></i>
+                            <span>thesignofthedoveministries@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Service Hours</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <p class="font-medium">Sunday Services</p>
+                            <p class="text-gray-400 text-sm">7:30 AM - First Service</p>
+                            <p class="text-gray-400 text-sm">10:30 AM - Second Service</p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Office Hours</p>
+                            <p class="text-gray-400 text-sm">Monday - Friday: 9:00 AM - 5:00 PM</p>
+                            <p class="text-gray-400 text-sm">Saturday: 10:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8">
+                <div class="text-center">
+                    <p class="text-gray-400 text-sm">© 2025 Dove Ministeries Africa. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script><script src="assets/js/devotion-widget.js"></script>
+
+    <!-- Marriage Assessment Quiz JavaScript -->
+    <script>
+        // Quiz data
+        const quizQuestions = [
+            {
+                question: "How often do you and your spouse communicate openly about your feelings?",
+                options: ["Daily", "Several times a week", "Once a week", "Rarely or never"],
+                scores: [4, 3, 2, 1]
+            },
+            {
+                question: "How well do you understand your spouse's needs and desires?",
+                options: ["Very well", "Well", "Somewhat", "Not well"],
+                scores: [4, 3, 2, 1]
+            },
+            {
+                question: "How often do you pray together as a couple?",
+                options: ["Daily", "Several times a week", "Weekly", "Rarely"],
+                scores: [4, 3, 2, 1]
+            },
+            {
+                question: "How do you handle conflicts in your marriage?",
+                options: ["We discuss and resolve them calmly", "We discuss but sometimes argue", "We avoid conflicts", "We have frequent arguments"],
+                scores: [4, 3, 2, 1]
+            },
+            {
+                question: "How satisfied are you with your physical intimacy?",
+                options: ["Very satisfied", "Satisfied", "Somewhat satisfied", "Not satisfied"],
+                scores: [4, 3, 2, 1]
+            },
+            {
+                question: "How often do you spend quality time together?",
+                options: ["Daily", "Several times a week", "Weekly", "Rarely"],
+                scores: [4, 3, 2, 1]
+            },
+            {
+                question: "How well do you support each other's goals and dreams?",
+                options: ["Very well", "Well", "Somewhat", "Not well"],
+                scores: [4, 3, 2, 1]
+            },
+            {
+                question: "How do you feel about your financial decisions as a couple?",
+                options: ["We agree and communicate well", "We mostly agree", "We sometimes disagree", "We frequently disagree"],
+                scores: [4, 3, 2, 1]
+            },
+            {
+                question: "How connected do you feel to your spouse emotionally?",
+                options: ["Very connected", "Connected", "Somewhat connected", "Not connected"],
+                scores: [4, 3, 2, 1]
+            },
+            {
+                question: "How often do you express appreciation to your spouse?",
+                options: ["Daily", "Several times a week", "Weekly", "Rarely"],
+                scores: [4, 3, 2, 1]
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let userAnswers = [];
+        let totalScore = 0;
+
+        function startQuiz() {
+            document.getElementById('quiz-start').classList.add('hidden');
+            document.getElementById('quiz-questions').classList.remove('hidden');
+            showQuestion(0);
+        }
+
+        function showQuestion(index) {
+            const question = quizQuestions[index];
+            const questionContent = document.getElementById('question-content');
+
+            questionContent.innerHTML = `
+                <h3 class="text-xl font-semibold text-gray-900 mb-6">${question.question}</h3>
+                <div class="space-y-3">
+                    ${question.options.map((option, optionIndex) => `
+                        <label class="flex items-center p-4 border border-gray-200 rounded-lg hover:border-pink-300 hover:bg-pink-50 transition-all cursor-pointer">
+                            <input type="radio" name="quiz-option" value="${optionIndex}" class="mr-3 text-pink-600 focus:ring-pink-500">
+                            <span class="text-gray-700">${option}</span>
+                        </label>
+                    `).join('')}
+                </div>
+            `;
+
+            document.getElementById('current-question').textContent = index + 1;
+            document.getElementById('progress-bar').style.width = `${((index + 1) / quizQuestions.length) * 100}%`;
+
+            // Update button states
+            document.getElementById('prev-btn').disabled = index === 0;
+            document.getElementById('next-btn').textContent = index === quizQuestions.length - 1 ? 'Get Results' : 'Next';
+        }
+
+        function nextQuestion() {
+            const selectedOption = document.querySelector('input[name="quiz-option"]:checked');
+            if (!selectedOption) {
+                alert('Please select an answer before continuing.');
+                return;
+            }
+
+            const answerIndex = parseInt(selectedOption.value);
+            userAnswers[currentQuestionIndex] = answerIndex;
+            totalScore += quizQuestions[currentQuestionIndex].scores[answerIndex];
+
+            if (currentQuestionIndex < quizQuestions.length - 1) {
+                currentQuestionIndex++;
+                showQuestion(currentQuestionIndex);
+            } else {
+                showResults();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestionIndex > 0) {
+                // Subtract previous score
+                if (userAnswers[currentQuestionIndex] !== undefined) {
+                    totalScore -= quizQuestions[currentQuestionIndex].scores[userAnswers[currentQuestionIndex]];
+                }
+
+                currentQuestionIndex--;
+                showQuestion(currentQuestionIndex);
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz-questions').classList.add('hidden');
+            document.getElementById('quiz-results').classList.remove('hidden');
+
+            const maxScore = quizQuestions.length * 4;
+            const percentage = Math.round((totalScore / maxScore) * 100);
+
+            document.getElementById('score-display').textContent = `${percentage}%`;
+
+            let scoreDescription = '';
+            let recommendations = [];
+
+            if (percentage >= 80) {
+                scoreDescription = 'Excellent! Your marriage shows strong signs of health and connection.';
+                recommendations = [
+                    'Continue nurturing your relationship with regular date nights',
+                    'Consider mentoring other couples in your church',
+                    'Keep up the great communication habits'
+                ];
+            } else if (percentage >= 60) {
+                scoreDescription = 'Good foundation! There are areas where you can grow stronger together.';
+                recommendations = [
+                    'Schedule regular time for meaningful conversations',
+                    'Consider joining our marriage enrichment workshops',
+                    'Work on one area of improvement at a time'
+                ];
+            } else if (percentage >= 40) {
+                scoreDescription = 'Your marriage needs some attention. Professional help can make a big difference.';
+                recommendations = [
+                    'Contact our marriage counselors for guidance',
+                    'Attend our next marriage retreat',
+                    'Start with open communication about your concerns'
+                ];
+            } else {
+                scoreDescription = 'Your marriage is in a challenging place. Seek immediate support and counseling.';
+                recommendations = [
+                    'Schedule an appointment with our marriage counselors',
+                    'Consider professional Christian counseling',
+                    'Pray together and seek God\'s guidance for your marriage'
+                ];
+            }
+
+            document.getElementById('score-description').textContent = scoreDescription;
+
+            const recommendationsList = document.getElementById('recommendations-list');
+            recommendationsList.innerHTML = recommendations.map(rec => `<li class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>${rec}</li>`).join('');
+        }
+
+        function retakeQuiz() {
+            currentQuestionIndex = 0;
+            userAnswers = [];
+            totalScore = 0;
+            document.getElementById('quiz-results').classList.add('hidden');
+            document.getElementById('quiz-start').classList.remove('hidden');
+        }
+
+        // Resource Library Functions
+        function downloadResource(filename) {
+            // In a real implementation, this would trigger a download
+            alert(`Downloading ${filename}...\n\nNote: This is a demo. In production, this would download the actual resource file.`);
+        }
+
+        function watchVideoSeries(seriesId) {
+            // In a real implementation, this would open a video playlist
+            alert(`Opening ${seriesId} video series...\n\nNote: This is a demo. In production, this would open the video series.`);
+        }
+
+        // Resource filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.resource-filter');
+            const resourceItems = document.querySelectorAll('.resource-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+
+                    // Update active button
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active', 'bg-pink-600', 'text-white');
+                        btn.classList.add('bg-gray-200', 'text-gray-700');
+                    });
+                    this.classList.add('active', 'bg-pink-600', 'text-white');
+                    this.classList.remove('bg-gray-200', 'text-gray-700');
+
+                    // Filter resources
+                    resourceItems.forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-category') === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+        // Success Stories Functions
+        function playStory(videoUrl, title, description, coupleName, duration) {
+            const modal = document.getElementById('story-modal');
+            const iframe = document.getElementById('story-iframe');
+            const modalTitle = document.getElementById('story-modal-title');
+            const modalDescription = document.getElementById('story-modal-description');
+
+            modalTitle.textContent = title;
+            modalDescription.textContent = description;
+
+            // Update couple info in modal
+            const coupleInfo = modal.querySelector('.flex.items-center.space-x-4 span:first-child');
+            const durationInfo = modal.querySelector('.flex.items-center.space-x-4 span:last-child');
+            coupleInfo.innerHTML = `<i class="fas fa-user mr-1"></i>${coupleName}`;
+            durationInfo.innerHTML = `<i class="fas fa-calendar mr-1"></i>${duration}`;
+
+            iframe.src = videoUrl + '?autoplay=1&rel=0&modestbranding=1';
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeStoryModal() {
+            const modal = document.getElementById('story-modal');
+            const iframe = document.getElementById('story-iframe');
+
+            iframe.src = '';
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        function readFullStory(storyId) {
+            // In a real implementation, this would open a full story page
+            alert(`Opening full story: ${storyId}\n\nNote: This is a demo. In production, this would open the complete story page.`);
+        }
+
+        function shareStory() {
+            const title = document.getElementById('story-modal-title').textContent;
+            const url = window.location.href;
+
+            if (navigator.share) {
+                navigator.share({
+                    title: title,
+                    text: 'Check out this inspiring marriage testimony from Dove Ministries Africa',
+                    url: url
+                });
+            } else {
+                // Fallback: copy to clipboard
+                navigator.clipboard.writeText(url).then(() => {
+                    alert('Story link copied to clipboard! Share it with others.');
+                });
+            }
+        }
+
+        function shareYourStory() {
+            alert('Share Your Story Feature\n\nContact our marriage ministry leaders to share your testimony:\n\nEmail: johnmary@dma.org\nPhone: +256 772824677\n\nYour story could inspire other couples!');
+        }
+
+        function loadMoreStories() {
+            alert('Loading more stories...\n\nNote: This is a demo. In production, this would load additional success stories from a database or API.');
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('story-modal');
+            if (event.target === modal) {
+                closeStoryModal();
+            }
+        });
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeStoryModal();
+            }
+        });
+
+        // Prayer Wall Functions
+        function joinPrayer(button) {
+            const prayerCount = button.previousElementSibling;
+            const currentCount = parseInt(prayerCount.textContent.split(' ')[1]);
+            prayerCount.textContent = `🙏 ${currentCount + 1} praying`;
+            button.textContent = 'Prayed';
+            button.disabled = true;
+            button.classList.add('opacity-50', 'cursor-not-allowed');
+
+            alert('Thank you for joining in prayer! Your prayers make a difference.');
+        }
+
+        // Prayer Form Submission
+        document.getElementById('prayer-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('prayer-name').value;
+            const request = document.getElementById('prayer-request').value;
+            const isAnonymous = document.getElementById('prayer-anonymous').checked;
+
+            // In a real implementation, this would send data to a server
+            alert('Thank you for sharing your prayer request. Our prayer team will lift this up to God. Your request has been submitted successfully.');
+
+            // Reset form
+            this.reset();
+        });
+
+        // Q&A Toggle Function
+        function toggleQA(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Prayer Request Form Functions
+        document.getElementById('prayer-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById('prayer-name').value,
+                spouseName: document.getElementById('spouse-name').value,
+                email: document.getElementById('prayer-email').value,
+                phone: document.getElementById('prayer-phone').value,
+                yearsMarried: document.getElementById('years-married').value,
+                prayerTypes: Array.from(document.querySelectorAll('input[name="prayer-type"]:checked')).map(cb => cb.value),
+                prayerRequest: document.getElementById('prayer-request').value,
+                followUpConsent: document.getElementById('follow-up-consent').checked
+            };
+
+            // Validate required fields
+            if (!formData.name || !formData.email || !formData.prayerRequest) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            // In a real implementation, this would send the data to a server
+            console.log('Prayer request submitted:', formData);
+
+            // Show success message
+            showPrayerSuccess();
+
+            // Reset form
+            this.reset();
+        });
+
+        function showPrayerSuccess() {
+            // Create success modal
+            const successModal = document.createElement('div');
+            successModal.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4';
+            successModal.innerHTML = `
+                <div class="bg-white rounded-2xl p-8 max-w-md w-full text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-check-circle text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Prayer Request Submitted</h3>
+                    <p class="text-gray-600 mb-6">
+                        Thank you for sharing your prayer request. Our ministry team will pray for you and your marriage.
+                        We will respond to your request within 24-48 hours.
+                    </p>
+                    <button onclick="this.parentElement.parentElement.remove()" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                        Close
+                    </button>
+                </div>
+            `;
+
+            document.body.appendChild(successModal);
+        }
+
+        // Marriage Tips Carousel Functions
+        let currentTipSlide = 0;
+        const totalTipSlides = 5;
+
+        document.getElementById('next-tip').addEventListener('click', () => {
+            nextTipSlide();
+        });
+
+        document.getElementById('prev-tip').addEventListener('click', () => {
+            previousTipSlide();
+        });
+
+        // Indicator clicks
+        document.querySelectorAll('.tip-indicator').forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                goToTipSlide(index);
+            });
+        });
+
+        // Auto-play carousel
+        setInterval(() => {
+            nextTipSlide();
+        }, 8000); // Change slide every 8 seconds
+
+        function nextTipSlide() {
+            currentTipSlide = (currentTipSlide + 1) % totalTipSlides;
+            updateTipCarousel();
+        }
+
+        function previousTipSlide() {
+            currentTipSlide = (currentTipSlide - 1 + totalTipSlides) % totalTipSlides;
+            updateTipCarousel();
+        }
+
+        function goToTipSlide(slideIndex) {
+            currentTipSlide = slideIndex;
+            updateTipCarousel();
+        }
+
+        function updateTipCarousel() {
+            const carousel = document.getElementById('tips-carousel');
+            carousel.style.transform = `translateX(-${currentTipSlide * 100}%)`;
+
+            // Update indicators
+            document.querySelectorAll('.tip-indicator').forEach((indicator, index) => {
+                if (index === currentTipSlide) {
+                    indicator.classList.remove('bg-gray-300');
+                    indicator.classList.add('bg-green-600');
+                } else {
+                    indicator.classList.remove('bg-green-600');
+                    indicator.classList.add('bg-gray-300');
+                }
+            });
+        }
+
+        function subscribeToTips() {
+            const email = event.target.previousElementSibling.value;
+            if (!email) {
+                alert('Please enter your email address.');
+                return;
+            }
+
+            // In a real implementation, this would send the email to a server
+            alert('Thank you for subscribing! You will receive weekly marriage tips and insights.');
+
+            // Clear the input
+            event.target.previousElementSibling.value = '';
+        }
+
+        // Virtual Retreat Functions
+        function joinVirtualRetreat() {
+            // In a real implementation, this would open Zoom or the virtual platform
+            alert('Virtual Couples Retreat\n\nJoin our live session:\n\nZoom Meeting ID: 123-456-789\nPassword: marriage2025\n\nTime: Every Saturday, 2:00 PM - 4:00 PM\n\nNote: This is a demo. In production, this would open your virtual meeting platform.');
+        }
+
+        function registerVirtualRetreat() {
+            alert('Virtual Retreat Registration\n\nThank you for your interest in our Virtual Couples Retreat!\n\nWe will send you:\n• Zoom meeting details\n• Session materials\n• Prayer guides\n• Discussion questions\n\nRegistration confirmation will be sent to your email within 24 hours.');
+        }
+
+        // Marriage Milestones Functions
+        function submitMilestone() {
+            alert('Submit Your Marriage Milestone\n\nCongratulations on your milestone!\n\nPlease contact our marriage ministry leaders to arrange your celebration:\n\nEmail: johnmary@dma.org\nPhone: +256 772824677\n\nInclude:\n• Your names\n• Wedding anniversary date\n• Years married\n• Any special requests\n\nWe look forward to celebrating with you!');
+        }
+
+        // Counseling Booking Functions
+        function bookCounseling(type) {
+            document.getElementById('booking-modal').classList.remove('hidden');
+            document.getElementById('booking-modal').classList.add('flex');
+            document.body.style.overflow = 'hidden';
+
+            // Pre-select the counseling type
+            document.getElementById('booking-type').value = type;
+        }
+
+        function closeBookingModal() {
+            document.getElementById('booking-modal').classList.add('hidden');
+            document.getElementById('booking-modal').classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Handle booking form submission
+        document.getElementById('booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById('booking-name').value,
+                spouse: document.getElementById('booking-spouse').value,
+                email: document.getElementById('booking-email').value,
+                phone: document.getElementById('booking-phone').value,
+                type: document.getElementById('booking-type').value,
+                date: document.getElementById('booking-date').value,
+                time: document.getElementById('booking-time').value,
+                concerns: document.getElementById('booking-concerns').value,
+                consent: document.getElementById('booking-consent').checked
+            };
+
+            // Validate required fields
+            if (!formData.name || !formData.email || !formData.phone || !formData.type || !formData.date || !formData.time || !formData.concerns || !formData.consent) {
+                alert('Please fill in all required fields and agree to the terms.');
+                return;
+            }
+
+            // In a real implementation, this would send the data to a server
+            console.log('Counseling booking submitted:', formData);
+
+            // Show success message and close modal
+            alert('Counseling Session Booked!\n\nThank you for booking a counseling session. You will receive a confirmation email within 24 hours with all the details.\n\nSession Details:\n• Type: ' + formData.type + '\n• Date: ' + formData.date + '\n• Time: ' + formData.time + '\n\nOur team will contact you if there are any changes needed.');
+
+            closeBookingModal();
+            this.reset();
+        });
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('booking-modal');
+            if (event.target === modal) {
+                closeBookingModal();
+            }
+        });
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeBookingModal();
+            }
+        });
+
+        // Community Connect Functions
+        function joinSmallGroup() {
+            alert('Join a Small Group\n\nThank you for your interest in connecting with other couples!\n\nWe have groups for different stages of marriage:\n\n• Newly Married (0-3 years)\n• Growing Families (4-10 years)\n• Seasoned Couples (10+ years)\n\nPlease contact our ministry coordinator to be matched with the right group:\n\nEmail: johnmary@dma.org\nPhone: +256 772824677\n\nWe\'ll help you find your perfect fit!');
+        }
+
+        function viewAllEvents() {
+            alert('Upcoming Social Events\n\nHere are all our upcoming events:\n\n🎲 Couples Game Night - This Friday, 7:00 PM\n💑 Marriage Retreat Follow-up - Next Saturday, 2:00 PM\n🏖️ Family Picnic - March 15, 11:00 AM\n🍽️ Couples Dinner - March 22, 6:00 PM\n🎭 Marriage Workshop - April 5-7, All weekend\n\nRSVP by contacting: johnmary@dma.org');
+        }
+
+        function joinCommunity() {
+            alert('Get Connected Today!\n\nWelcome to our marriage community!\n\nHere\'s how to get started:\n\n1. Fill out our connection form\n2. Attend an orientation session\n3. Get matched with a small group\n4. Join our social events\n\nContact us to begin your journey:\n\nEmail: johnmary@dma.org\nPhone: +256 772824677\n\nWe can\'t wait to welcome you!');
+        }
+
+        function learnMore() {
+            alert('About Our Ministry\n\nOur Married Couples Ministry is designed to help couples:\n\n• Build lasting marriages\n• Share life experiences\n• Grow spiritually together\n• Find support during challenges\n• Celebrate milestones\n\nWe offer counseling, resources, and community support.\nAll services are confidential and faith-based.\n\nContact us to learn how we can support your marriage!');
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+

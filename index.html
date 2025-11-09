@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dove Ministries Africa - Transforming Communities Through Faith</title>
+    <meta name="description" content="Discover Dove Ministries Africa's impact across the continent through our churches, community programs, and spiritual leadership.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="assets/css/floating-devotion.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
+    <link rel="stylesheet" href="assets/css/floating-devotion.css">
+    <link rel="icon" href="assets/images/logo.png" type="image/png">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <img src="assets/images/logo.png" alt="DMA Logo" class="h-10 w-auto">
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-blue-600 hover:text-blue-800 transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-blue-600 transition-colors">About</a>
+                    <div class="relative group">
+                        <a href="ministries.html" class="text-gray-700 hover:text-blue-600 transition-colors flex items-center">
+                            Ministries
+                            <svg class="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-200">
+                            <div class="py-2">
+                                <a href="marriedcouples.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Married Couples Ministry</a>
+                                <a href="youth.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Youth Ministry</a>
+                                <a href="children.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Children Ministry</a>
+                                <a href="evangelism.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Evangelism Ministry</a>
+                                <a href="intercessions.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Intercessions Ministry</a>
+                                <a href="worship.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Worship Ministry</a>
+                                <div class="border-t border-gray-100 my-2"></div>
+                                <a href="ministries.html" class="block px-4 py-2 text-sm text-blue-600 hover:bg-blue-50 font-medium transition-colors">View All Ministries</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="events.html" class="text-gray-700 hover:text-blue-600 transition-colors">Events</a>
+                    <a href="sermons.html" class="text-gray-700 hover:text-blue-600 transition-colors">Sermons</a>
+                    <a href="gallery.html" class="text-gray-700 hover:text-blue-600 transition-colors">Gallery</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+                    <a href="donate.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Donate</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu overlay -->
+        <div id="mobile-menu-overlay"></div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu">
+            <button class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="px-2">
+                <a href="#home" class="block px-3 py-2 text-blue-600">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">About</a>
+                <div class="ministries-menu">
+                    <a href="#" class="ministries-toggle block px-3 py-2 text-gray-700 hover:text-blue-600 flex items-center justify-between">
+                        <span>Ministries</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
+                    </a>
+                    <div class="ministries-submenu hidden pl-4">
+                        <a href="marriedcouples.html" class="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600">Married Couples</a>
+                        <a href="youth.html" class="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600">Youth</a>
+                        <a href="children.html" class="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600">Children</a>
+                        <a href="evangelism.html" class="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600">Evangelism</a>
+                        <a href="intercessions.html" class="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600">Intercessions</a>
+                        <a href="worship.html" class="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600">Worship</a>
+                        <div class="border-t border-gray-200 my-1"></div>
+                        <a href="ministries.html" class="block px-2 py-1 text-sm text-blue-600 font-medium">View All</a>
+                    </div>
+                </div>
+                <a href="events.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Events</a>
+                <a href="sermons.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Sermons</a>
+                <a href="gallery.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Gallery</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</a>
+                <a href="donate.html" class="block px-3 py-2 bg-blue-600 text-white rounded-lg text-center">Donate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-16 relative min-h-screen bg-gradient-to-br from-sky-400 via-sky-500 to-sky-600 flex items-center overflow-hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+        <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop>
+            <source src="assets/videos/Hero_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/70"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+            <div class="text-center space-y-8">
+                <div class="space-y-6">
+                    <h1 class="text-5xl md:text-7xl font-bold text-white drop-shadow-2xl leading-tight">
+                        Experience God’s Presence<br>
+                        <span class="text-sky-100">Embrace His Purpose</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-white drop-shadow-lg max-w-4xl mx-auto leading-relaxed">
+                        At The Sign of the Dove Church, we are a family of believers committed to spreading God’s love and transforming communities across Africa.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                        <a href="about.html" class="bg-white text-sky-600 px-10 py-4 rounded-full hover:bg-sky-50 transition-all duration-300 transform hover:scale-105 shadow-xl text-center font-bold text-lg">
+                            Learn More About Us
+                        </a>
+                        <a href="contact.html" class="border-3 border-white text-white px-10 py-4 rounded-full hover:bg-white hover:text-sky-600 transition-all duration-300 transform hover:scale-105 shadow-xl text-center font-bold text-lg">
+                            Get In Touch
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Featured Pastor Card -->
+                <div class="mt-16">
+                    <div class="bg-white/20 backdrop-blur-md p-8 rounded-3xl shadow-2xl border border-white/30 max-w-md mx-auto">
+                        <div class="text-center">
+                            <img src="assets/images/pastor.jpg" alt="Pastor Daniel Kaggwa" class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-xl mx-auto mb-6">
+                            <p class="font-bold text-white text-2xl drop-shadow-lg">Pastor Daniel Kaggwa</p>
+                            <p class="text-sky-100 font-semibold text-lg mb-4">Senior Pastor & Founder</p>
+                            <p class="text-white/90 italic text-base leading-relaxed drop-shadow-md">"Daniel heads up the pastoral staff of our church. Daniel's chief calling is to expound the Scriptures to instruct God's people. He is the vision bearer of DMA."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ministries Section -->
+    <section id="main" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Ministries & Programs</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    We believe every believer has a calling to serve, grow, and impact the world. Through our diverse ministries and programs, we empower people of all ages to discover their purpose, deepen their faith, and make a difference in their communities.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="assets/images/KEN_0053.jpg" alt="Youth Ministry" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mb-4">Youth</span>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Youth Ministry</h3>
+                        <p class="text-gray-600 mb-4">Empowering young people to discover their purpose and live out their faith through mentorship, discipleship, and community service.</p>
+                        <a href="youth.html" class="inline-flex items-center text-blue-600 hover:text-blue-800">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="assets/images/photo 2.jpeg" alt="Children Ministry" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-4">Children</span>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Children Ministry</h3>
+                        <p class="text-gray-600 mb-4">Nurturing young hearts with God's love through age-appropriate teaching, fun activities, and spiritual foundation building.</p>
+                        <a href="children.html" class="inline-flex items-center text-green-600 hover:text-green-800">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="assets/images/ki.JPG" alt="Worship Ministry" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="inline-block bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium mb-4">Worship</span>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Worship Ministry</h3>
+                        <p class="text-gray-600 mb-4">Leading congregations in authentic worship experiences that draw hearts closer to God through music, prayer, and praise.</p>
+                        <a href="worship.html" class="inline-flex items-center text-purple-600 hover:text-purple-800">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="ministries.html" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                    View All Ministries
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Mission</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    To take the gospel of Jesus Christ to the lost and assimilate them into a church community where they may grow spiritually and become equipped to win the lost.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-globe text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Global Impact</h3>
+                    <p class="text-gray-600">Reaching communities across Africa with a message of hope and transformation.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Community Focus</h3>
+                    <p class="text-gray-600">Building strong, supportive communities through local church initiatives.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heart text-pink-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Compassionate Care</h3>
+                    <p class="text-gray-600">Providing practical support and care to those in need through targeted programs.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-book-open text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Biblical Teaching</h3>
+                    <p class="text-gray-600">Delivering sound biblical teaching and comprehensive discipleship programs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonies Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Testimonies</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Hear from our community members about how faith and our ministries have transformed their lives.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-xl p-6 text-center">
+                    <img src="assets/images/IMG_1082.JPG" alt="Testimony" class="w-20 h-20 rounded-full object-cover mx-auto mb-4">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">William</h3>
+                    <p class="text-sm text-gray-500 mb-2">Evangelist</p>
+                    <p class="text-gray-600 text-sm mb-4">"I've never been part of a church that's just getting started, so this is all new territory for me. It's incredible to see God at work, bringing people together."</p>
+                    <div class="flex justify-center">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-6 text-center">
+                    <img src="assets/images/IMG_1041.JPG" alt="Testimony" class="w-20 h-20 rounded-full object-cover mx-auto mb-4">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-1">Juliet</h3>
+                    <p class="text-sm text-gray-500 mb-2">Doctor</p>
+                    <p class="text-gray-600 text-sm mb-4">"When I came to Dove, I met genuine, imperfect people who loved God and loved each other with all their hearts—people who live Christianity."</p>
+                    <div class="flex justify-center">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-6 text-center">
+                    <img src="assets/images/Screenshot (63).png" alt="Testimony" class="w-20 h-20 rounded-full object-cover mx-auto mb-4">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Grace</h3>
+                    <p class="text-gray-600 text-sm mb-4">"Finding this church was a turning point in my life. The worship and community support helped me overcome my challenges."</p>
+                    <div class="flex justify-center">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="main" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Upcoming Events</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Join us for transformative events designed to strengthen your faith and build community.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="assets/images/DAM.png" alt="DAM" class="w-full h-58 object-cover">
+                    <div class="p-6">
+                        <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-4">Conference</span>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Transformation Conference</h3>
+                        <div class="space-y-2 text-gray-600 mb-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-calendar text-green-600 mr-3"></i>
+                                <span>November 17-23, 2025</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-clock text-green-600 mr-3"></i>
+                                <span>9:00 AM - 4:00 PM</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-green-600 mr-3"></i>
+                                <span>The Sign Of The Dove Church - Kyazanga</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">A week of Transformation, and knowing who you were born to be in God's Kingdom</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="assets/images/20th.jpg" alt="@0th Anniversary" class="w-full h-68 object-cover">
+                    <div class="p-6">
+                        <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mb-4">Thanksgiving</span>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">20th Anniversary</h3>
+                        <div class="space-y-2 text-gray-600 mb-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-calendar text-blue-600 mr-3"></i>
+                                <span>December 1- 4, 2025</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-clock text-blue-600 mr-3"></i>
+                                <span>9:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-blue-600 mr-3"></i>
+                                <span>The Sign Of The Dove Church - Zana</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Join us as we celebrate 20 years of exits as Dove Church in Uganda</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="assets/images/Special.png" alt="Community Outreach" class="w-full h-68 object-cover">
+                    <div class="p-6">
+                        <span class="inline-block bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium mb-4">Service</span>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Sunday Special Service</h3>
+                        <div class="space-y-2 text-gray-600 mb-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-calendar text-purple-600 mr-3"></i>
+                                <span>November, 2025</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-clock text-purple-600 mr-3"></i>
+                                <span>4:00 PM - 7:00 PM</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-purple-600 mr-3"></i>
+                                <span>The Sign Of The Dove Church - Zana</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Divine Healing & Restoration</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="events.html" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                    View All Events
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Statistics -->
+    <section class="py-20 bg-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Impact Across Africa</h2>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto">
+                    Through faith, dedication, and community partnership, we're making a lasting difference in lives across the continent.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">50+</div>
+                    <div class="text-lg opacity-90">Churches Established</div>
+                    <div class="text-sm opacity-75 mt-1">+15% from last year</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">10,000+</div>
+                    <div class="text-lg opacity-90">Active Members</div>
+                    <div class="text-sm opacity-75 mt-1">+25% from last year</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">5,000+</div>
+                    <div class="text-lg opacity-90">Lives Transformed</div>
+                    <div class="text-sm opacity-75 mt-1">Ongoing impact</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">100+</div>
+                    <div class="text-lg opacity-90">Community Projects</div>
+                    <div class="text-sm opacity-75 mt-1">20 new in 2024</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prayer Request Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Share Your Prayer Requests</h2>
+                        <p class="text-xl text-gray-600">
+                            Our prayer team is committed to standing with you in faith. Submit your prayer requests, and let us join you in seeking God's guidance and blessing.
+                        </p>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-clock text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">24/7 Prayer</h3>
+                                <p class="text-gray-600 text-sm">Dedicated prayer team available round the clock</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-shield-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Confidential</h3>
+                                <p class="text-gray-600 text-sm">Your requests are handled with utmost privacy</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-globe text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Global Network</h3>
+                                <p class="text-gray-600 text-sm">Connected with prayer warriors across Africa</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-book text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Biblical Support</h3>
+                                <p class="text-gray-600 text-sm">Receive encouraging scripture references</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <form id="prayer-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="prayer-name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                                <input type="text" id="prayer-name" name="name" required
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="prayer-email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <input type="email" id="prayer-email" name="email" required
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="prayer-request" class="block text-sm font-medium text-gray-700 mb-2">Prayer Request</label>
+                            <textarea id="prayer-request" name="request" rows="4" required
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                      placeholder="Share your prayer request..."></textarea>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="confidential" name="confidential"
+                                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="confidential" class="ml-2 block text-sm text-gray-700">
+                                Keep my request confidential
+                            </label>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors">
+                            Submit Prayer Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                <div class="space-y-6">
+                    <h3 class="text-lg font-semibold mb-4">ABOUT US</h3>
+                    <p class="text-gray-400">
+                        The Dove Ministries Africa was founded in 2005 by Pastor Daniel and Erica Kaggwa, under the tutelage of Apostle Harry and Deborah Stackhouse. It is located in Nfuufu Zone, Zzana-Bunamwaya in Makindye-Ssabagabo municipality, about 500 metres from the Zzana Roundabout on Entebbe Road.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">MINISTERIES</h3>
+                    <div class="space-y-3">
+                        <a href="marriedcouples.html" class="block text-gray-400 hover:text-white transition-colors">Married Couples</a>
+                        <a href="youth.html" class="block text-gray-400 hover:text-white transition-colors">Youth</a>
+                        <a href="children.html" class="block text-gray-400 hover:text-white transition-colors">Children</a>
+                        <a href="evangelism.html" class="block text-gray-400 hover:text-white transition-colors">Evangelism</a>
+                        <a href="intercessions.html" class="block text-gray-400 hover:text-white transition-colors">Intercessions</a>
+                        <a href="worship.html" class="block text-gray-400 hover:text-white transition-colors">Worship</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">REACH US</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-blue-400 mt-1 mr-3"></i>
+                            <div>
+                                <p>Nfuufu Zone, Zzana-Bunamwaya</p>
+                                <p>P.O.Box 7044, Kampla uganda,</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-blue-400 mr-3"></i>
+                            <span>+256 772824677</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-blue-400 mr-3"></i>
+                            <span>+256 700116734</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-blue-400 mr-3"></i>
+                            <span>thesignofthedoveministries@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Service Hours</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <p class="font-medium">Sunday Services</p>
+                            <p class="text-gray-400 text-sm">7:30 AM - First Service</p>
+                            <p class="text-gray-400 text-sm">10:30 AM - Second Service</p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Office Hours</p>
+                            <p class="text-gray-400 text-sm">Monday - Friday: 9:00 AM - 5:00 PM</p>
+                            <p class="text-gray-400 text-sm">Saturday: 10:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8">
+                <div class="text-center">
+                    <p class="text-gray-400 text-sm">© 2025 Dove Ministeries Africa. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/devotion-widget.js"></script>
+</body>
+</html>
+
+
+

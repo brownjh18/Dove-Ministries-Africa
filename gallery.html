@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Dove Ministries Africa</title>
+    <meta name="description" content="Explore our photo gallery showcasing Dove Ministries Africa's work, events, community programs, and impact across Africa.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link rel="stylesheet" href="assets/css/floating-devotion.css">
+    <link rel="icon" href="assets/images/logo.png" type="image/png">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <img src="assets/images/logo.png" alt="DMA Logo" class="h-10 w-auto">
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-700 hover:text-blue-600 transition-colors">About</a>
+                    <div class="relative group"><a href="ministries.html" class="text-gray-700 hover:text-blue-600 transition-colors flex items-center">Ministries<svg class="ml-1 w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></a><div class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-200"><div class="py-2"><a href="marriedcouples.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Married Couples Ministry</a><a href="youth.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Youth Ministry</a><a href="children.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Children Ministry</a><a href="evangelism.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Evangelism Ministry</a><a href="intercessions.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Intercessions Ministry</a><a href="worship.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">Worship Ministry</a><div class="border-t border-gray-100 my-2"></div><a href="ministries.html" class="block px-4 py-2 text-sm text-blue-600 hover:bg-blue-50 font-medium transition-colors">View All Ministries</a></div></div></div>
+                    <a href="events.html" class="text-gray-700 hover:text-blue-600 transition-colors">Events</a>
+                    <a href="sermons.html" class="text-gray-700 hover:text-blue-600 transition-colors">Sermons</a>
+                    <a href="gallery.html" class="text-blue-600 hover:text-blue-800 transition-colors">Gallery</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+                    <a href="donate.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Donate</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu overlay -->
+        <div id="mobile-menu-overlay"></div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu">
+            <button class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="px-2">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">About</a>
+                <div class="ministries-menu">
+                    <a href="#" class="ministries-toggle block px-3 py-2 text-gray-700 hover:text-blue-600 flex items-center justify-between">
+                        <span>Ministries</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
+                    </a>
+                    <div class="ministries-submenu hidden pl-4">
+                        <a href="marriedcouples.html" class="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600">Married Couples</a>
+                        <a href="youth.html" class="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600">Youth</a>
+                        <a href="children.html" class="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600">Children</a>
+                        <a href="evangelism.html" class="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600">Evangelism</a>
+                        <a href="intercessions.html" class="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600">Intercessions</a>
+                        <a href="worship.html" class="block px-2 py-1 text-sm text-gray-600 hover:text-blue-600">Worship</a>
+                        <div class="border-t border-gray-200 my-1"></div>
+                        <a href="ministries.html" class="block px-2 py-1 text-sm text-blue-600 font-medium">View All</a>
+                    </div>
+                </div>
+                <a href="events.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Events</a>
+                <a href="sermons.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Sermons</a>
+                <a href="gallery.html" class="block px-3 py-2 bg-blue-50 text-blue-600">Gallery</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Contact</a>
+                <a href="donate.html" class="block px-3 py-2 bg-blue-600 text-white rounded-lg text-center">Donate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section --><section class="pt-16 relative h-75 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 flex items-center overflow-hidden"><div class="absolute inset-0 bg-black bg-opacity-40"></div><div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/images/hero-gallery.jpg');"></div><div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full"><div class="text-center text-white"><h1 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">Our Gallery</h1><p class="text-xl md:text-2xl text-gray-100 drop-shadow-md max-w-3xl mx-auto">
+                    Witness the impact of our ministry through photos capturing moments of transformation, community, and faith across Africa.
+                </p><div class="mt-8"><a href="#main" class="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg text-center font-semibold">Learn More</a></div></div></div></section>
+
+    <!-- Gallery Filters -->
+    <section class="py-8 bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="filter-btn active bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors" data-filter="all">
+                    All Photos
+                </button>
+                <button class="filter-btn bg-gray-200 text-gray-700 px-6 py-2 rounded-full hover:bg-blue-100 hover:text-blue-700 transition-colors" data-filter="ministry">
+                    Ministry Work
+                </button>
+                <button class="filter-btn bg-gray-200 text-gray-700 px-6 py-2 rounded-full hover:bg-green-100 hover:text-green-700 transition-colors" data-filter="events">
+                    Events
+                </button>
+                <button class="filter-btn bg-gray-200 text-gray-700 px-6 py-2 rounded-full hover:bg-purple-100 hover:text-purple-700 transition-colors" data-filter="community">
+                    Community
+                </button>
+                <button class="filter-btn bg-gray-200 text-gray-700 px-6 py-2 rounded-full hover:bg-pink-100 hover:text-pink-700 transition-colors" data-filter="youth">
+                    Youth
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+                <!-- Ministry Work Photos -->
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-category="ministry">
+                    <img src="assets/images/event.jpg" alt="Church Service" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                        <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                            <h3 class="text-lg font-semibold mb-2">Sunday Worship Service</h3>
+                            <p class="text-sm">Kampala, Uganda</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-category="events">
+                    <img src="assets/images/kaggwa3.JPG" alt="Leadership Conference" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                        <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                            <h3 class="text-lg font-semibold mb-2">Ministers Class</h3>
+                            <p class="text-sm">2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-category="community">
+                    <img src="assets/images/praying.JPG" alt="Community Outreach" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                        <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                            <h3 class="text-lg font-semibold mb-2">Dedications</h3>
+                            <p class="text-sm">Zana</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-category="youth">
+                    <img src="assets/images/ww4.JPG" alt="Youth Camp" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                        <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                            <h3 class="text-lg font-semibold mb-2">Women's Day</h3>
+                            <p class="text-sm">Dove Church - zana</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-category="ministry">
+                    <img src="assets/images/bible2.JPG" alt="Pastor Teaching" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                        <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                            <h3 class="text-lg font-semibold mb-2">Bible Study Session</h3>
+                            <p class="text-sm">Dar es Salaam, Tanzania</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-category="community">
+                    <img src="assets/images/jj.jpg" alt="School Construction" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                        <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                            <h3 class="text-lg font-semibold mb-2">Crusades</h3>
+                            <p class="text-sm">Jinja - Bubugo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-category="events">
+                    <img src="assets/images/Christmas.png" alt="Christmas Celebration" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                        <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                            <h3 class="text-lg font-semibold mb-2">Christmas Service</h3>
+                            <p class="text-sm">Zana - Nfufu</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-category="youth">
+                    <img src="assets/images/gr.JPG" alt="Youth Worship" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                        <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                            <h3 class="text-lg font-semibold mb-2">Business Conference for Pastors and leaders</h3>
+                            <p class="text-sm">Mukono Bulika</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-category="ministry">
+                    <img src="assets/images/ASM.JPG" alt="Prayer Meeting" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                        <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                            <h3 class="text-lg font-semibold mb-2">All Schools Meet</h3>
+                            <p class="text-sm">Zana - Nfufu</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-category="community">
+                    <img src="assets/images/outdoor.jpg" alt="Medical Clinic" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                        <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                            <h3 class="text-lg font-semibold mb-2">Outdoor Missions</h3>
+                            <p class="text-sm">Uganda</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-category="events">
+                    <img src="assets/images/erica4.jpg" alt="Women's Conference" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                        <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                            <h3 class="text-lg font-semibold mb-2">Pastors & leader Conference</h3>
+                            <p class="text-sm">Mukono - Bulika</p>
+                        </div>
+                    </div>
+                </div>
+<!-- 
+                <div id="video-gallery-item" class="gallery-item group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-category="youth">
+                    <video src="assets/videos/SOD_Geita_Tanzania.mp4" poster="assets/images/Geita.png" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" muted></video>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                        <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                            <h3 class="text-lg font-semibold mb-2">Geita Mission</h3>
+                            <p class="text-sm">Tanzania - Geita</p>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- <div id="video-gallery-item" class="gallery-item group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-category="youth">
+                    <video src="assets/videos/BIBLE STUDY Every Wednesday 6pm 8 30pm.mp4" poster="assets/images/kaggwa 4.JPG" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" muted></video>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                        <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                            <h3 class="text-lg font-semibold mb-2">Bible Study Sessions</h3>
+                            <p class="text-sm">Dove Church - Zana</p>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow" data-category="events">
+                    <img src="assets/images/Sunday Stream.png" alt="Sunday Stream" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                        <div class="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
+                            <h3 class="text-lg font-semibold mb-2">Pastors & leader Conference</h3>
+                            <p class="text-sm">Mukono - Bulika</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                    Load More Photos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Gallery Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Video Gallery</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Experience our ministry work through videos capturing special moments and testimonies.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <video class="w-full aspect-video object-cover" src="assets/videos/Hero_video.mp4" poster="assets/images/hero.jpg" controls></video>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Church Service</h3>
+                        <p class="text-gray-600 text-sm mb-4">Experience our Sunday worship service and the power of community in faith.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-clock mr-2"></i>
+                            <span>Hero Video</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <video class="w-full aspect-video object-cover" src="assets/videos/BIBLE STUDY Every Wednesday 6pm 8 30pm.mp4" poster="assets/images/bible2.JPG" controls></video>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Bible Study Session</h3>
+                        <p class="text-gray-600 text-sm mb-4">Join our weekly Bible study every Wednesday from 6pm to 8:30pm.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-clock mr-2"></i>
+                            <span>Wednesday Study</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <video class="w-full aspect-video object-cover" src="assets/videos/SUNDAY SERVICE __ 2ND NOVEMBER 2025.mp4" poster="assets/images/event.jpg" controls></video>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Special Sunday Service</h3>
+                        <p class="text-gray-600 text-sm mb-4">Watch our special service from November 2nd, 2025, filled with worship and inspiration.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-clock mr-2"></i>
+                            <span>November 2nd Service</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                <div class="space-y-6">
+                    <h3 class="text-lg font-semibold mb-4">ABOUT US</h3>
+                    <p class="text-gray-400">
+                        The Dove Ministries Africa was founded in 2005 by Pastor Daniel and Erica Kaggwa, under the tutelage of Apostle Harry and Deborah Stackhouse. It is located in Nfuufu Zone, Zzana-Bunamwaya in Makindye-Ssabagabo municipality, about 500 metres from the Zzana Roundabout on Entebbe Road.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">MINISTERIES</h3>
+                    <div class="space-y-3">
+                        <a href="marriedcouples.html" class="block text-gray-400 hover:text-white transition-colors">Married Couples</a>
+                        <a href="youth.html" class="block text-gray-400 hover:text-white transition-colors">Youth</a>
+                        <a href="children.html" class="block text-gray-400 hover:text-white transition-colors">Children</a>
+                        <a href="evangelism.html" class="block text-gray-400 hover:text-white transition-colors">Evangelism</a>
+                        <a href="intercessions.html" class="block text-gray-400 hover:text-white transition-colors">Intercessions</a>
+                        <a href="worship.html" class="block text-gray-400 hover:text-white transition-colors">Worship</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">REACH US</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-blue-400 mt-1 mr-3"></i>
+                            <div>
+                                <p>Nfuufu Zone, Zzana-Bunamwaya</p>
+                                <p>P.O.Box 7044, Kampla uganda,</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-blue-400 mr-3"></i>
+                            <span>+256 772824677</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-blue-400 mr-3"></i>
+                            <span>+256 700116734</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-blue-400 mr-3"></i>
+                            <span>thesignofthedoveministries@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Service Hours</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <p class="font-medium">Sunday Services</p>
+                            <p class="text-gray-400 text-sm">7:30 AM - First Service</p>
+                            <p class="text-gray-400 text-sm">10:30 AM - Second Service</p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Office Hours</p>
+                            <p class="text-gray-400 text-sm">Monday - Friday: 9:00 AM - 5:00 PM</p>
+                            <p class="text-gray-400 text-sm">Saturday: 10:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8">
+                <div class="text-center">
+                    <p class="text-gray-400 text-sm">© 2025 Dove Ministeries Africa. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script><script src="assets/js/devotion-widget.js"></script>
+    <script>
+        // Gallery filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active', 'bg-blue-600', 'text-white'));
+                    filterButtons.forEach(btn => btn.classList.add('bg-gray-200', 'text-gray-700'));
+                    this.classList.add('active', 'bg-blue-600', 'text-white');
+                    this.classList.remove('bg-gray-200', 'text-gray-700');
+
+                    // Filter gallery items
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+        // Video hover play functionality for all video gallery items
+        const videoGalleryItems = document.querySelectorAll('#video-gallery-item');
+        videoGalleryItems.forEach(item => {
+            const video = item.querySelector('video');
+            if (video) {
+                item.addEventListener('mouseenter', function() {
+                    video.play();
+                });
+                item.addEventListener('mouseleave', function() {
+                    video.pause();
+                    video.currentTime = 0; // Reset to beginning
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+
