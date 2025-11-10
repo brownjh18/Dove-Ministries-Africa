@@ -5,11 +5,19 @@ class DevotionWidget {
         this.isCollapsed = false;
         this.devotions = [];
         this.currentDevotionIndex = 0;
+
+        // Check if mobile and set initial collapsed state
+        const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        if (isMobile) {
+            this.isCollapsed = true;
+        }
+
         this.init();
     }
 
     init() {
         this.createWidget();
+        this.loadCollapsedState(); // Load saved state first
         this.loadDevotions();
         this.setupEventListeners();
         this.startAutoRotate();
@@ -246,6 +254,7 @@ class DevotionWidget {
         this.isCollapsed = true;
         const toggleBtn = this.container.querySelector('#devotion-toggle');
         toggleBtn.textContent = '+';
+        this.saveCollapsedState();
     }
 
     expandWidget() {
@@ -253,6 +262,7 @@ class DevotionWidget {
         this.isCollapsed = false;
         const toggleBtn = this.container.querySelector('#devotion-toggle');
         toggleBtn.textContent = '−';
+        this.saveCollapsedState();
     }
 
     startAutoRotate() {
@@ -388,6 +398,24 @@ class DevotionWidget {
             setTimeout(() => {
                 this.collapseWidget();
             }, 1000);
+        }
+    }
+
+    // Method to persist collapsed state in localStorage
+    saveCollapsedState() {
+        localStorage.setItem('devotionWidgetCollapsed', this.isCollapsed);
+    }
+
+    // Method to load collapsed state from localStorage
+    loadCollapsedState() {
+        const savedState = localStorage.getItem('devotionWidgetCollapsed');
+        if (savedState !== null) {
+            this.isCollapsed = JSON.parse(savedState);
+            if (this.isCollapsed) {
+                this.collapseWidget();
+            } else {
+                this.expandWidget();
+            }
         }
     }
 }
