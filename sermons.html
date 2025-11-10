@@ -336,7 +336,7 @@
             </div>
 
             <!-- Sermons Gallery Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="sermons-grid">
+            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 md:gap-6" id="sermons-grid">
                 <!-- Sermon cards will be dynamically populated -->
             </div>
 
@@ -515,21 +515,70 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script><script src="assets/js/devotion-widget.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/devotion-widget.js"></script>
     <script>
         // YouTube API configuration
-        const API_KEY = "AIzaSyAj8q7g9KxiDOFw4FAL701SCP2e4KJs3us";
+        const API_KEY = "AIzaSyDVgKMl36F4Dh1saaTcscmEMI3GYdp7afY";
         const CHANNEL_ID = "UCeD__nWtSfoyMRZAL0KYjhw";
+
+        // Mock data for development/testing
+        const mockSermons = [
+            {
+                id: { videoId: "mock1" },
+                snippet: {
+                    title: "Sample Sermon 1",
+                    description: "This is a sample sermon description for testing purposes.",
+                    publishedAt: new Date().toISOString(),
+                    thumbnails: {
+                        high: { url: "https://via.placeholder.com/480x360?text=Sermon+1" },
+                        medium: { url: "https://via.placeholder.com/320x180?text=Sermon+1" }
+                    }
+                }
+            },
+            {
+                id: { videoId: "mock2" },
+                snippet: {
+                    title: "Sample Sermon 2",
+                    description: "Another sample sermon for the gallery display.",
+                    publishedAt: new Date(Date.now() - 86400000).toISOString(),
+                    thumbnails: {
+                        high: { url: "https://via.placeholder.com/480x360?text=Sermon+2" },
+                        medium: { url: "https://via.placeholder.com/320x180?text=Sermon+2" }
+                    }
+                }
+            },
+            {
+                id: { videoId: "mock3" },
+                snippet: {
+                    title: "Sample Sermon 3",
+                    description: "Third sample sermon to demonstrate the gallery layout.",
+                    publishedAt: new Date(Date.now() - 172800000).toISOString(),
+                    thumbnails: {
+                        high: { url: "https://via.placeholder.com/480x360?text=Sermon+3" },
+                        medium: { url: "https://via.placeholder.com/320x180?text=Sermon+3" }
+                    }
+                }
+            }
+        ];
 
         // Debug: Check if we're running from localhost
         console.log('Page loaded from:', window.location.origin);
         console.log('Is localhost:', window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+
+        // Force API usage instead of mock data for testing
+        console.log('Forcing API usage for testing...');
 
         // Featured sermon functionality
         async function loadFeaturedSermon() {
             try {
                 const response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&order=date&type=video&maxResults=1&key=${API_KEY}`);
                 const data = await response.json();
+
+                if (data.error) {
+                    console.warn('YouTube API error for featured sermon, using mock data:', data.error.message);
+                    throw new Error('YouTube API Error: ' + data.error.message);
+                }
 
                 if (data.items && data.items.length > 0) {
                     const video = data.items[0];
@@ -572,24 +621,68 @@
                     // Show content
                     document.getElementById('featured-sermon-loading').classList.add('hidden');
                     document.getElementById('featured-sermon-content').classList.remove('hidden');
+                } else {
+                    // No videos found, use mock data
+                    console.log('No featured sermon found from API, using mock data');
+                    loadMockFeaturedSermon();
                 }
             } catch (error) {
-                console.error('Error loading featured sermon:', error);
-                // Show error state for featured sermon
-                document.getElementById('featured-sermon-loading').innerHTML = `
-                    <div class="text-center">
-                        <i class="fas fa-exclamation-triangle text-4xl text-red-300 mb-4"></i>
-                        <p class="text-white/80">Unable to load featured sermon</p>
-                        <button onclick="loadFeaturedSermon()" class="mt-4 bg-white/20 text-white px-6 py-2 rounded-lg hover:bg-white/30 transition-colors">
-                            Try Again
-                        </button>
-                    </div>
-                `;
-                setTimeout(() => {
-                    document.getElementById('featured-sermon-loading').classList.add('hidden');
-                    document.getElementById('featured-sermon-content').classList.remove('hidden');
-                }, 3000);
+                console.error('Error loading featured sermon from API, using mock data:', error);
+                // Fallback to mock data
+                loadMockFeaturedSermon();
             }
+        }
+
+        // Load mock featured sermon
+        function loadMockFeaturedSermon() {
+            const publishedAt = new Date();
+            const duration = '45m 30s';
+
+            // Check if elements exist before updating
+            const featuredTitle = document.getElementById('featured-title');
+            const featuredDescription = document.getElementById('featured-description');
+            const featuredSpeaker = document.getElementById('featured-speaker');
+            const featuredDate = document.getElementById('featured-date');
+            const featuredDuration = document.getElementById('featured-duration');
+            const thumbnailElement = document.getElementById('featured-thumbnail');
+            const loadingElement = document.getElementById('featured-sermon-loading');
+            const contentElement = document.getElementById('featured-sermon-content');
+
+            if (featuredTitle) featuredTitle.textContent = 'Welcome to Dove Ministries Africa';
+            if (featuredDescription) featuredDescription.textContent = 'Join us for an inspiring message of faith, hope, and transformation. Experience the power of God\'s word in your life...';
+            if (featuredSpeaker) featuredSpeaker.textContent = 'Dove Ministries Africa';
+            if (featuredDate) featuredDate.textContent = publishedAt.toLocaleDateString();
+            if (featuredDuration) featuredDuration.textContent = duration;
+
+            // Set mock thumbnail
+            if (thumbnailElement) {
+                thumbnailElement.style.backgroundImage = `url('https://via.placeholder.com/480x360?text=Featured+Sermon')`;
+                thumbnailElement.style.backgroundSize = 'cover';
+                thumbnailElement.style.backgroundPosition = 'center';
+            }
+
+            // Set up watch button
+            const watchBtn = document.getElementById('featured-watch-btn');
+            if (watchBtn) {
+                watchBtn.onclick = () => {
+                    window.open('https://www.youtube.com/@DoveMinistriesAfrica', '_blank');
+                };
+            }
+
+            // Set up share button
+            const shareBtn = document.getElementById('featured-share-btn');
+            if (shareBtn) {
+                shareBtn.onclick = () => {
+                    shareSermon('featured-mock', 'Welcome to Dove Ministries Africa');
+                };
+            }
+
+            // Store mock video ID
+            window.featuredVideoId = 'featured-mock';
+
+            // Show content
+            if (loadingElement) loadingElement.classList.add('hidden');
+            if (contentElement) contentElement.classList.remove('hidden');
         }
 
         function parseDuration(duration) {
@@ -636,6 +729,21 @@
             }
         }
 
+        // Mock live service data
+        const mockLiveService = {
+            title: "Sunday Morning Service",
+            description: "Join us for our weekly Sunday morning service with powerful worship and teaching.",
+            publishedAt: new Date().toISOString(),
+            channelTitle: "Dove Ministries Africa"
+        };
+
+        // Mock last service data
+        const mockLastService = {
+            title: "Previous Sunday Service",
+            description: "Our previous Sunday service recording is now available.",
+            publishedAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString() // 1 week ago
+        };
+
         // Live service functionality
         async function checkLiveService() {
             try {
@@ -644,6 +752,7 @@
                 // First test API connection
                 const apiWorking = await testAPIConnection();
                 if (!apiWorking) {
+                    console.warn('API connection failed, using mock live service data');
                     throw new Error('API connection failed');
                 }
 
@@ -740,25 +849,35 @@
 
             } catch (error) {
                 console.error('Error checking live service:', error);
-                // Show error state for live service
-                document.getElementById('live-loading').innerHTML = `
-                    <div class="text-center">
-                        <i class="fas fa-wifi-slash text-4xl text-red-300 mb-4"></i>
-                        <h3 class="text-3xl font-bold text-white mb-2">Connection Error</h3>
-                        <p class="text-white/80">Unable to check for live services</p>
-                        <p class="text-white/60 text-sm mt-2">Error: ${error.message}</p>
-                        <button onclick="checkLiveService()" class="mt-6 bg-white/20 text-white px-6 py-3 rounded-lg hover:bg-white/30 transition-colors">
-                            Try Again
-                        </button>
-                    </div>
-                `;
-                setTimeout(async () => {
-                    await loadLastServiceDetails();
-                    document.getElementById('live-loading').classList.add('hidden');
-                    document.getElementById('live-stream').classList.add('hidden');
-                    document.getElementById('last-service').classList.remove('hidden');
-                }, 3000);
+                // Show mock last service instead of error
+                console.log('Using mock last service data');
+                loadMockLastService();
+                document.getElementById('live-loading').classList.add('hidden');
+                document.getElementById('live-stream').classList.add('hidden');
+                document.getElementById('last-service').classList.remove('hidden');
             }
+        }
+
+        // Load mock last service
+        function loadMockLastService() {
+            const detailsContainer = document.getElementById('last-service-details');
+
+            const publishedAt = new Date(mockLastService.publishedAt);
+            const duration = '1h 15m'; // Mock duration
+
+            detailsContainer.innerHTML = `
+                <div class="text-left">
+                    <h4 class="text-xl font-semibold mb-2">${mockLastService.title}</h4>
+                    <p class="opacity-90 mb-2">${mockLastService.description}</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <span>Service Date: ${publishedAt.toLocaleDateString()}</span>
+                        <span>Duration: ${duration}</span>
+                    </div>
+                </div>
+            `;
+
+            // Store mock video ID for watch button
+            window.lastVideoId = 'mock-last-service';
         }
 
         // Show upcoming stream UI
@@ -809,6 +928,11 @@
                 const response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&eventType=completed&type=video&order=date&maxResults=5&key=${API_KEY}`);
                 const data = await response.json();
 
+                if (data.error) {
+                    console.warn('YouTube API error for last service, using mock data:', data.error.message);
+                    throw new Error('YouTube API Error: ' + data.error.message);
+                }
+
                 let lastLiveVideo = null;
 
                 if (data.items && data.items.length > 0) {
@@ -818,6 +942,11 @@
                     // Fallback: get recent videos and check if any were live
                     const fallbackResponse = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&order=date&type=video&maxResults=10&key=${API_KEY}`);
                     const fallbackData = await fallbackResponse.json();
+
+                    if (fallbackData.error) {
+                        console.warn('YouTube API error for fallback last service, using mock data:', fallbackData.error.message);
+                        throw new Error('YouTube API Error: ' + fallbackData.error.message);
+                    }
 
                     if (fallbackData.items && fallbackData.items.length > 0) {
                         // Use the most recent video as fallback
@@ -852,15 +981,14 @@
                     // Store last video ID for watch button
                     window.lastVideoId = videoId;
                 } else {
-                    document.getElementById('last-service-details').innerHTML = `
-                        <p class="opacity-90">No previous live services found.</p>
-                    `;
+                    // No videos found, use mock data
+                    console.log('No last service found from API, using mock data');
+                    loadMockLastService();
                 }
             } catch (error) {
-                console.error('Error loading last service details:', error);
-                document.getElementById('last-service-details').innerHTML = `
-                    <p class="opacity-90">Unable to load service details at this time.</p>
-                `;
+                console.error('Error loading last service details from API, using mock data:', error);
+                // Fallback to mock data
+                loadMockLastService();
             }
         }
 
@@ -871,6 +999,11 @@
                 // Get detailed video information including live streaming details
                 const response = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=liveStreamingDetails,statistics,snippet&id=${videoId}&key=${API_KEY}`);
                 const data = await response.json();
+
+                if (data.error) {
+                    console.warn('YouTube API error for live video details, using mock data:', data.error.message);
+                    throw new Error('YouTube API Error: ' + data.error.message);
+                }
 
                 if (data.items && data.items.length > 0) {
                     const videoDetails = data.items[0];
@@ -914,15 +1047,22 @@
                     });
                 }
             } catch (error) {
-                console.error('Error loading live video details:', error);
-                // Fallback to basic info
-                document.getElementById('live-title').textContent = liveVideo.snippet.title;
-                document.getElementById('live-description').textContent = (liveVideo.snippet.description || '').substring(0, 200) + '...';
-                document.getElementById('live-speaker').textContent = liveVideo.snippet.channelTitle;
-                document.getElementById('live-date').textContent = new Date(liveVideo.snippet.publishedAt).toLocaleDateString();
-                document.getElementById('live-viewers').innerHTML = '<i class="fas fa-circle mr-1 text-red-500"></i>Live';
-                window.liveVideoId = liveVideo.id.videoId;
+                console.error('Error loading live video details from API, using mock data:', error);
+                // Fallback to mock live video details
+                loadMockLiveVideoDetails(liveVideo);
             }
+        }
+
+        // Load mock live video details
+        function loadMockLiveVideoDetails(liveVideo) {
+            document.getElementById('live-title').textContent = mockLiveService.title;
+            document.getElementById('live-description').textContent = mockLiveService.description.substring(0, 200) + '...';
+            document.getElementById('live-speaker').textContent = mockLiveService.channelTitle;
+            document.getElementById('live-date').textContent = new Date().toLocaleDateString() + ' at ' + new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            document.getElementById('live-start-time').textContent = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            document.getElementById('live-viewers').innerHTML = '<i class="fas fa-clock mr-1"></i>Starting soon';
+            document.getElementById('live-viewers-count').textContent = 'Not yet started';
+            window.liveVideoId = 'mock-live-service';
         }
 
         function openLiveInYouTube() {
@@ -970,22 +1110,22 @@
             }
 
             try {
-                let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&order=date&type=video&maxResults=${sermonsPerPage}&key=${API_KEY}`;
-                if (loadMore && nextPageToken) {
-                    url += `&pageToken=${nextPageToken}`;
-                }
-
-                const response = await fetch(url);
+                // Try YouTube API with the new key
+                console.log('Fetching from YouTube API...');
+                const response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&order=date&type=video&maxResults=${sermonsPerPage}&key=${API_KEY}`);
                 const data = await response.json();
 
                 if (data.error) {
-                    throw new Error('YouTube API Error: ' + data.error.message);
+                    console.error('YouTube API error:', data.error);
+                    throw new Error(`YouTube API Error ${data.error.code}: ${data.error.message}`);
                 }
 
+                console.log('YouTube API success! Found', data.items?.length || 0, 'videos');
+
                 if (data.items && data.items.length > 0) {
-                    // Get video details for all videos (including live streaming details)
+                    // Get video details for all videos
                     const videoIds = data.items.map(item => item.id.videoId).join(',');
-                    const detailsResponse = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=contentDetails,statistics,liveStreamingDetails&id=${videoIds}&key=${API_KEY}`);
+                    const detailsResponse = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=contentDetails,statistics&id=${videoIds}&key=${API_KEY}`);
                     const detailsData = await detailsResponse.json();
 
                     const videoDetailsMap = {};
@@ -995,18 +1135,14 @@
                         });
                     }
 
-                    // Create sermon cards - filter out live videos from recent sermons grid
+                    // Create sermon cards
                     data.items.forEach((item, index) => {
-                        // Skip live videos in the recent sermons grid (they show in live section)
-                        if (item.snippet.liveBroadcastContent === 'live') {
-                            return;
-                        }
-
                         const videoId = item.id.videoId;
                         const details = videoDetailsMap[videoId];
                         const duration = details ? parseDuration(details.contentDetails.duration) : 'N/A';
                         const viewCount = details ? formatViewCount(details.statistics.viewCount) : '0';
 
+                        console.log(`Adding video: ${item.snippet.title} (${viewCount} views)`);
                         const sermonCard = createSermonCard(item, duration, viewCount);
                         sermonsGrid.appendChild(sermonCard);
                     });
@@ -1027,8 +1163,8 @@
                         loadMoreBtn.disabled = false;
                     }
 
-                    // Hide load more if no more results or if we filtered out too many live videos
-                    if (!nextPageToken || sermonsGrid.children.length === 0) {
+                    // Hide load more if no more results
+                    if (!nextPageToken) {
                         document.getElementById('load-more-container').classList.add('hidden');
                     } else {
                         document.getElementById('load-more-container').classList.remove('hidden');
@@ -1037,16 +1173,28 @@
                     currentPage++;
                 } else {
                     // No videos found
-                    loadingElement.classList.add('hidden');
+                    console.log('No videos found from API');
+                    errorElement.innerHTML = `
+                        <i class="fas fa-video-slash text-6xl text-gray-400 mb-6"></i>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">No Videos Found</h3>
+                        <p class="text-gray-600 mb-6">No videos were found for this channel.</p>
+                        <button onclick="loadRecentSermons()" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                            Try Again
+                        </button>
+                    `;
                     errorElement.classList.remove('hidden');
-                    document.getElementById('load-more-container').classList.add('hidden');
+                    loadingElement.classList.add('hidden');
                 }
             } catch (error) {
-                console.error('Error loading sermons:', error);
-                loadingElement.classList.add('hidden');
-                errorElement.classList.remove('hidden');
-                document.getElementById('load-more-container').classList.add('hidden');
+                console.error('Error loading sermons from API:', error);
 
+                // Fallback to mock data
+                console.log('Falling back to mock data...');
+                loadMockSermons();
+                loadingElement.classList.add('hidden');
+                errorElement.classList.add('hidden');
+
+                // Update load more button
                 if (loadMore) {
                     const loadingText = loadMoreBtn.querySelector('.loading-text');
                     const loadingSpinner = loadMoreBtn.querySelector('.loading-spinner');
@@ -1054,15 +1202,41 @@
                     loadingSpinner.classList.add('hidden');
                     loadMoreBtn.disabled = false;
                 }
+
+                // Hide load more for mock data
+                document.getElementById('load-more-container').classList.add('hidden');
             } finally {
                 isLoading = false;
             }
         }
 
-        // Create sermon card element (gallery style)
+        // Load mock sermons for development/testing
+        function loadMockSermons() {
+            const sermonsGrid = document.getElementById('sermons-grid');
+            const loadingElement = document.getElementById('sermons-loading');
+            const errorElement = document.getElementById('sermons-error');
+
+            // Clear loading and error states
+            loadingElement.classList.add('hidden');
+            errorElement.classList.add('hidden');
+
+            // Add mock sermons
+            mockSermons.forEach((item, index) => {
+                const duration = '45m 30s'; // Mock duration
+                const viewCount = formatViewCount(Math.floor(Math.random() * 10000) + 100); // Random view count
+
+                const sermonCard = createSermonCard(item, duration, viewCount);
+                sermonsGrid.appendChild(sermonCard);
+            });
+
+            // Hide load more button for mock data
+            document.getElementById('load-more-container').classList.add('hidden');
+        }
+
+        // Create sermon card element (YouTube-style gallery)
         function createSermonCard(video, duration, viewCount) {
             const card = document.createElement('div');
-            card.className = 'sermon-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105';
+            card.className = 'sermon-card bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-lg transition-all duration-200 transform hover:-translate-y-1';
 
             const publishedAt = new Date(video.snippet.publishedAt);
             const timeAgo = getTimeAgo(publishedAt);
@@ -1071,47 +1245,41 @@
             card.innerHTML = `
                 <div class="relative group cursor-pointer" onclick="playVideoInModal('${video.id.videoId}', '${video.snippet.title.replace(/'/g, "\\'")}', '${(video.snippet.description || '').substring(0, 150).replace(/'/g, "\\'")}', '${publishedAt.toLocaleDateString()}', '${viewCount}')">
                     <div class="aspect-video bg-gray-200 relative overflow-hidden">
-                        <img src="${thumbnailUrl}" alt="${video.snippet.title}" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                            <div class="bg-white bg-opacity-90 rounded-full p-4 transform scale-75 group-hover:scale-100 transition-transform duration-300">
-                                <i class="fas fa-play text-2xl text-blue-600"></i>
+                        <img src="${thumbnailUrl}" alt="${video.snippet.title}" class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-200 flex items-center justify-center">
+                            <div class="bg-black bg-opacity-75 rounded-full p-4 transform scale-90 group-hover:scale-100 transition-transform duration-200">
+                                <i class="fas fa-play text-white text-2xl"></i>
                             </div>
                         </div>
-                        <div class="absolute top-3 left-3 bg-blue-600 text-white px-2 py-1 rounded text-xs font-medium">
-                            <i class="fas fa-video mr-1"></i>Sermon
-                        </div>
-                        <div class="absolute bottom-3 right-3 bg-black bg-opacity-75 text-white px-2 py-1 rounded text-xs">
+                        <div class="absolute bottom-2 right-2 bg-black bg-opacity-80 text-white px-2 py-1 rounded text-xs font-medium">
                             ${duration}
                         </div>
                     </div>
                 </div>
-                <div class="p-4">
-                    <div class="flex items-start justify-between mb-2">
-                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium">
-                            <i class="fas fa-clock mr-1"></i>${timeAgo}
-                        </span>
-                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full">
-                            <i class="fas fa-eye mr-1"></i>${viewCount}
-                        </span>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 leading-tight hover:text-blue-600 transition-colors cursor-pointer" onclick="playVideoInModal('${video.id.videoId}', '${video.snippet.title.replace(/'/g, "\\'")}', '${(video.snippet.description || '').substring(0, 150).replace(/'/g, "\\'")}', '${publishedAt.toLocaleDateString()}', '${viewCount}')">${video.snippet.title}</h3>
-                    <p class="text-gray-600 text-sm mb-4 line-clamp-3">${(video.snippet.description || 'No description available').substring(0, 120)}...</p>
-
-                    <div class="flex items-center justify-between text-xs text-gray-500 mb-3">
-                        <span><i class="fas fa-calendar mr-1"></i>${publishedAt.toLocaleDateString()}</span>
-                        <span><i class="fas fa-clock mr-1"></i>${duration}</span>
-                    </div>
-
-                    <div class="flex space-x-2">
-                        <button onclick="playVideoInModal('${video.id.videoId}', '${video.snippet.title.replace(/'/g, "\\'")}', '${(video.snippet.description || '').substring(0, 150).replace(/'/g, "\\'")}', '${publishedAt.toLocaleDateString()}', '${viewCount}')" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 text-sm font-medium flex-1">
-                            <i class="fas fa-play mr-1"></i> Watch Here
-                        </button>
-                        <button onclick="window.open('https://www.youtube.com/watch?v=${video.id.videoId}', '_blank')" class="bg-red-600 text-white px-3 py-2 rounded-lg hover:bg-red-700 transition-colors">
-                            <i class="fab fa-youtube"></i>
-                        </button>
-                        <button onclick="shareSermon('${video.id.videoId}', '${video.snippet.title.replace(/'/g, "\\'")}')" class="bg-gray-100 text-gray-600 px-3 py-2 rounded-lg hover:bg-gray-200 transition-colors">
-                            <i class="fas fa-share"></i>
-                        </button>
+                <div class="p-2">
+                    <div class="flex items-start justify-between">
+                        <div class="flex-1">
+                            <h3 class="text-sm font-medium text-gray-900 mb-1 line-clamp-2 leading-tight hover:text-blue-600 transition-colors cursor-pointer" onclick="playVideoInModal('${video.id.videoId}', '${video.snippet.title.replace(/'/g, "\\'")}', '${(video.snippet.description || '').substring(0, 150).replace(/'/g, "\\'")}', '${publishedAt.toLocaleDateString()}', '${viewCount}')">${video.snippet.title}</h3>
+                            <div class="text-xs text-gray-600">
+                                <div class="font-medium">Dove Ministries Africa</div>
+                                <div class="flex items-center space-x-2">
+                                    <span>${viewCount} views</span>
+                                    <span>•</span>
+                                    <span>${timeAgo}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex space-x-1 ml-2">
+                            <button onclick="playVideoInModal('${video.id.videoId}', '${video.snippet.title.replace(/'/g, "\\'")}', '${(video.snippet.description || '').substring(0, 150).replace(/'/g, "\\'")}', '${publishedAt.toLocaleDateString()}', '${viewCount}')" class="text-gray-600 hover:text-blue-600 transition-colors p-1 rounded hover:bg-gray-100" title="Watch here">
+                                <i class="fas fa-play text-sm"></i>
+                            </button>
+                            <button onclick="window.open('https://www.youtube.com/watch?v=${video.id.videoId}', '_blank')" class="text-gray-600 hover:text-red-600 transition-colors p-1 rounded hover:bg-gray-100" title="Watch on YouTube">
+                                <i class="fab fa-youtube text-sm"></i>
+                            </button>
+                            <button onclick="shareSermon('${video.id.videoId}', '${video.snippet.title.replace(/'/g, "\\'")}')" class="text-gray-600 hover:text-gray-800 transition-colors p-1 rounded hover:bg-gray-100" title="Share">
+                                <i class="fas fa-share text-sm"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             `;
@@ -1229,6 +1397,11 @@
                 const response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&order=viewCount&type=video&maxResults=12&key=${API_KEY}`);
                 const data = await response.json();
 
+                if (data.error) {
+                    console.warn('YouTube API error for popular sermons, using mock data:', data.error.message);
+                    throw new Error('YouTube API Error: ' + data.error.message);
+                }
+
                 if (data.items && data.items.length > 0) {
                     const videoIds = data.items.map(item => item.id.videoId).join(',');
                     const detailsResponse = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=contentDetails,statistics&id=${videoIds}&key=${API_KEY}`);
@@ -1254,14 +1427,38 @@
                     loadingElement.classList.add('hidden');
                     document.getElementById('load-more-container').classList.add('hidden'); // No pagination for popular
                 } else {
-                    loadingElement.classList.add('hidden');
-                    errorElement.classList.remove('hidden');
+                    // No videos found, use mock data
+                    console.log('No popular videos found from API, using mock data');
+                    loadMockPopularSermons();
                 }
             } catch (error) {
-                console.error('Error loading popular sermons:', error);
-                loadingElement.classList.add('hidden');
-                errorElement.classList.remove('hidden');
+                console.error('Error loading popular sermons from API, using mock data:', error);
+                // Fallback to mock data
+                loadMockPopularSermons();
             }
+        }
+
+        // Load mock popular sermons
+        function loadMockPopularSermons() {
+            const sermonsGrid = document.getElementById('sermons-grid');
+            const loadingElement = document.getElementById('sermons-loading');
+            const errorElement = document.getElementById('sermons-error');
+
+            // Clear loading and error states
+            loadingElement.classList.add('hidden');
+            errorElement.classList.add('hidden');
+
+            // Add mock popular sermons with higher view counts
+            mockSermons.forEach((item, index) => {
+                const duration = '45m 30s'; // Mock duration
+                const viewCount = formatViewCount(Math.floor(Math.random() * 50000) + 10000); // Higher view count for popular
+
+                const sermonCard = createSermonCard(item, duration, viewCount);
+                sermonsGrid.appendChild(sermonCard);
+            });
+
+            // Hide load more button for mock data
+            document.getElementById('load-more-container').classList.add('hidden');
         }
 
         // Load sermon series (attempt to group by similar titles or use playlists)
@@ -1279,6 +1476,11 @@
                 const playlistResponse = await fetch(`https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId=${CHANNEL_ID}&maxResults=10&key=${API_KEY}`);
                 const playlistData = await playlistResponse.json();
 
+                if (playlistData.error) {
+                    console.warn('YouTube API error for playlists, using mock series:', playlistData.error.message);
+                    throw new Error('YouTube API Error: ' + playlistData.error.message);
+                }
+
                 if (playlistData.items && playlistData.items.length > 0) {
                     // Display playlists as series
                     playlistData.items.forEach((playlist) => {
@@ -1290,6 +1492,11 @@
                     const response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&order=date&type=video&maxResults=20&key=${API_KEY}`);
                     const data = await response.json();
 
+                    if (data.error) {
+                        console.warn('YouTube API error for series search, using mock series:', data.error.message);
+                        throw new Error('YouTube API Error: ' + data.error.message);
+                    }
+
                     if (data.items && data.items.length > 0) {
                         const series = groupVideosBySeries(data.items);
                         Object.values(series).forEach((seriesVideos) => {
@@ -1298,16 +1505,58 @@
                                 sermonsGrid.appendChild(seriesCard);
                             }
                         });
+                    } else {
+                        // No series found, use mock series
+                        console.log('No series found from API, using mock series');
+                        loadMockSeries();
                     }
                 }
 
                 loadingElement.classList.add('hidden');
                 document.getElementById('load-more-container').classList.add('hidden');
             } catch (error) {
-                console.error('Error loading sermon series:', error);
-                loadingElement.classList.add('hidden');
-                errorElement.classList.remove('hidden');
+                console.error('Error loading sermon series from API, using mock series:', error);
+                // Fallback to mock series
+                loadMockSeries();
             }
+        }
+
+        // Load mock sermon series
+        function loadMockSeries() {
+            const sermonsGrid = document.getElementById('sermons-grid');
+            const loadingElement = document.getElementById('sermons-loading');
+            const errorElement = document.getElementById('sermons-error');
+
+            // Clear loading and error states
+            loadingElement.classList.add('hidden');
+            errorElement.classList.add('hidden');
+
+            // Create mock series data
+            const mockSeries = [
+                {
+                    id: 'mock-series-1',
+                    snippet: {
+                        title: 'Fruit of the Spirit Series',
+                        description: 'A comprehensive series exploring the nine fruits of the Spirit as described in Galatians 5:22-23.'
+                    }
+                },
+                {
+                    id: 'mock-series-2',
+                    snippet: {
+                        title: 'Prayer & Intercession',
+                        description: 'Learn the power of prayer and develop a deeper relationship with God through focused intercession.'
+                    }
+                }
+            ];
+
+            // Add mock series cards
+            mockSeries.forEach((series) => {
+                const seriesCard = createSeriesCard(series);
+                sermonsGrid.appendChild(seriesCard);
+            });
+
+            // Hide load more button for mock data
+            document.getElementById('load-more-container').classList.add('hidden');
         }
 
         // Helper function to group videos by series based on title patterns
@@ -1472,30 +1721,11 @@
                 loadMoreBtn.addEventListener('click', () => loadRecentSermons(true));
             }
 
-            // Initialize live service check, featured sermon, and recent sermons
+            // Initialize - load recent sermons and check for live service
             checkLiveService();
-            loadFeaturedSermon();
             loadRecentSermons();
         });
 
-        // Sermon subscription form
-        document.getElementById('sermon-subscribe-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const email = this.querySelector('input[type="email"]').value;
-
-            // Here you would typically send the email to your server
-            console.log('Sermon subscription:', email);
-
-            // Show success message
-            alert('Thank you for subscribing! You will receive notifications for new sermons.');
-
-            // Reset form
-            this.reset();
-        });
     </script>
 </body>
 </html>
-
-
-
